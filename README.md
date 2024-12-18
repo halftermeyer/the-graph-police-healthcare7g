@@ -85,8 +85,8 @@ Now we can use **NeoDash** app for our use cases.
   - *show common PIIs* scene action [there's a twist here]
   - *label fraudulent* scene action
 
--------- Materials --------
-### Materials for your own usage:
+### -------- Materials --------
+
 ## We encourage users to use these materials, which are also available for download here:
 - Download the [dump](./TheGraphPolice_dump_auradb_5.6.tar) file for the entire dataset. This was tested for Neo4j AuraDB 5.26, and uses top-tier features like RBAC and requires ~400 MB of storage.
 - Use a [NeoDash Dashboard](./TheGraphPolice_dashboard_fraud_detection.json) which is also persisted in the DB.
