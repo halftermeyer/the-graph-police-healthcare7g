@@ -37,10 +37,10 @@ This is a synthetic Dataset, created as a Demo to address insurance companies (F
 - Others
 
 
-## Demo & Presentation
-### The Demo is splitted into several parts
+### Demo & Presentation
+The Demo is splitted into several parts:
 
-#### Neo4j NeoDash
+### Neo4j NeoDash
 First, reset the Current Demo from the first tab over NeoDash
 [![Unlikely association](https://img.youtube.com/vi/ifqc-LkD4-4/0.jpg)](https://www.youtube.com/watch?v=ifqc-LkD4-4)
 Now we can use **NeoDash** app for our use cases.
@@ -74,7 +74,7 @@ Now we can use **NeoDash** app for our use cases.
 
     [![Case Management](https://img.youtube.com/vi/w0mxS5Laf1g/0.jpg)](https://www.youtube.com/watch?v=w0mxS5Laf1g)
     
-#### Neo4j Bloom
+### Neo4j Bloom
 
 [![Bloom investigation](https://img.youtube.com/vi/dhg7m-rmy60/0.jpg)](https://www.youtube.com/watch?v=dhg7m-rmy60)
 
@@ -83,8 +83,8 @@ Now we can use **NeoDash** app for our use cases.
   - *show common PIIs* scene action [there's a twist here]
   - *label fraudulent* scene action
 
-(---)
-### All materials are available for free usages here:
+### Materials for your own usage:
+## We encourage users to use these materials, which are also available for download here:
 - Download the [dump](./TheGraphPolice_dump_auradb_5.6.tar) file for the entire dataset. This was tested for Neo4j AuraDB 5.26, and uses top-tier features like RBAC and requires ~400 MB of storage.
 - Use a [NeoDash Dashboard](./TheGraphPolice_dashboard_fraud_detection.json) which is also persisted in the DB.
 - Use a [Bloom Perspective](./TheGraphPolice_bloom_perspective_fraud_investigation.json)
