@@ -1,0 +1,2745 @@
+{
+  "title": "Health Insurance -- Healthcare Professionals Fraud Detection",
+  "version": "2.4",
+  "settings": {
+    "pagenumber": 0,
+    "editable": true,
+    "fullscreenEnabled": false,
+    "parameters": {
+      "neodash_ps_search": "",
+      "neodash_recherche": "Le Moucheux",
+      "neodash_presta": "4:64740260-b6e0-4cd6-a59d-40d6408cf9a4:4489",
+      "neodash_frequence_max": "0.07",
+      "neodash_frequence_max_display": "0.07",
+      "neodash_delta_jours_max": 365,
+      "neodash_delta_jours_max_display": 365,
+      "neodash_days": 15,
+      "neodash_days_display": 15,
+      "neodash_frequence": 40,
+      "neodash_frequence_display": 40,
+      "neodash_ps1_id": "27b3749f-f75f-4951-ac8e-acee0710fb8f",
+      "neodash_ps1_id_display": [],
+      "neodash_ps2_id": "e8ffe988-b80b-426f-b846-7100392b00ad",
+      "neodash_ps2_id_display": [],
+      "neodash_search": "Shoard",
+      "neodash_person_first_name": "Minne",
+      "neodash_person_first_name_display": "Minne",
+      "neodash_ps_siret_flag_display": "91720068933566",
+      "neodash_ps_siret_flag": "",
+      "neodash_comma_separated_involved_persons_ids": "3a5795fc-4366-4a1b-ba7b-f08755c4783d, 630fb0a8-9094-41b4-8395-7581f87d65ba",
+      "neodash_person_id_involved_display": [
+        "e8ffe988-b80b-426f-b846-7100392b00ad"
+      ],
+      "neodash_ps_id": "8ce0ee44-9f51-4a57-9e7e-26777b3de5ff",
+      "neodash_comment": "test case",
+      "neodash_person_id_involved": [
+        "e8ffe988-b80b-426f-b846-7100392b00ad"
+      ]
+    },
+    "theme": "light"
+  },
+  "pages": [
+    {
+      "title": "Guide",
+      "reports": [
+        {
+          "id": "0bc37c8c-7d35-496d-990e-96c2f43dc485",
+          "title": "Healthcare Model",
+          "query": "CALL db.schema.visualization()\nYIELD nodes, relationships\nWITH [n IN nodes WHERE NOT labels(n)[0] IN [\"PS\", \"Executeur\", \"Prescripteur\",\"Executor\", \"Prescriber\", \"Beneficiaire\",\"Soin\", \"Person\", \"Prestation\",\"Prescripteur\", \"Souscripteur\", \"Opticien\", \"Dentiste\", \"Generaliste\", \"Executeur\", \"Pharmacien\", \"Ophtalmologiste\", \"ElementFacturable\", \"_Neodash_Dashboard\", \"Point\", \"Shipment\", \"Analyst\", \"Boss\", \"Employee\", \"Investigator\", \"Investigation\", \"Phone\", \"IP\", \"Photo\", \"IBAN\", \"NormalizedAddress\"]] AS nodes, relationships\nWITH nodes, [r IN relationships WHERE startNode(r) IN nodes AND endNode(r) IN nodes] AS rels\nWITH nodes, [r IN rels WHERE NOT type(r) IN [\"ORDONNANCE_PLAUSIBLE\", \"HAS_MANAGER\", \"AMONG_50_CLOSEST\", \"MEME_SOINS_SUCCESSIFS\"]] AS rels\nRETURN nodes, rels \n\n\n",
+          "width": 7,
+          "height": 7,
+          "x": 0,
+          "y": 0,
+          "type": "graph",
+          "selection": {
+            "Prescription": "name",
+            "Execution": "name",
+            "Care": "name",
+            "HealthcarePro": "name",
+            "Beneficiary": "name"
+          },
+          "settings": {},
+          "schema": [
+            [
+              "Prescription",
+              "name",
+              "indexes",
+              "constraints"
+            ],
+            [
+              "Execution",
+              "name",
+              "indexes",
+              "constraints"
+            ],
+            [
+              "Care",
+              "name",
+              "indexes",
+              "constraints"
+            ],
+            [
+              "HealthcarePro",
+              "name",
+              "indexes",
+              "constraints"
+            ],
+            [
+              "Beneficiary",
+              "name",
+              "indexes",
+              "constraints"
+            ],
+            [
+              "CONTIENT",
+              "name"
+            ],
+            [
+              "REALISE",
+              "name"
+            ],
+            [
+              "ORDONNE",
+              "name"
+            ],
+            [
+              "AU_BENEFICE_DE",
+              "name"
+            ]
+          ]
+        },
+        {
+          "id": "71ccd843-47d5-48cc-b684-cc759dd7fec7",
+          "title": "KYW Model Summary",
+          "query": "CALL db.schema.visualization()\nYIELD nodes, relationships\nWITH [n IN nodes WHERE NOT labels(n)[0] IN [\"Person\",\"Care\",\"Executor\", \"Prescriber\", \"Execution\", \"Soin\", \"Prestation\", \"Beneficiaire\", \"PS\",\"Prescripteur\", \"Souscripteur\", \"Prescription\", \"Opticien\", \"Dentiste\", \"Generaliste\", \"Executeur\", \"Pharmacien\", \"Ophtalmologiste\", \"ElementFacturable\", \"_Neodash_Dashboard\", \"Point\", \"Shipment\", \"Analyst\", \"Boss\", \"Employee\", \"Investigator\", \"Investigation\"]] AS nodes, relationships\nWITH nodes, [r IN relationships WHERE startNode(r) IN nodes AND endNode(r) IN nodes] AS rels\nWITH nodes, [r IN rels WHERE NOT type(r) IN [\"ORDONNANCE_PLAUSIBLE\", \"HAS_MANAGER\", \"AMONG_50_CLOSEST\"]] AS rels\nRETURN nodes, rels \n\n\n\n\n\n",
+          "width": 8,
+          "height": 7,
+          "x": 7,
+          "y": 0,
+          "type": "graph",
+          "selection": {
+            "Photo": "name",
+            "NormalizedAddress": "name",
+            "Phone": "name",
+            "IBAN": "name",
+            "IP": "name",
+            "HealthcarePro": "name",
+            "Beneficiary": "name"
+          },
+          "settings": {},
+          "schema": [
+            [
+              "Photo",
+              "name",
+              "indexes",
+              "constraints"
+            ],
+            [
+              "NormalizedAddress",
+              "name",
+              "indexes",
+              "constraints"
+            ],
+            [
+              "Phone",
+              "name",
+              "indexes",
+              "constraints"
+            ],
+            [
+              "IBAN",
+              "name",
+              "indexes",
+              "constraints"
+            ],
+            [
+              "IP",
+              "name",
+              "indexes",
+              "constraints"
+            ],
+            [
+              "HealthcarePro",
+              "name",
+              "indexes",
+              "constraints"
+            ],
+            [
+              "Beneficiary",
+              "name",
+              "indexes",
+              "constraints"
+            ],
+            [
+              "HAS_IBAN",
+              "name"
+            ],
+            [
+              "HAS_IP",
+              "name"
+            ],
+            [
+              "HAS_ADDRESS",
+              "name"
+            ],
+            [
+              "HAS_PHOTO",
+              "name"
+            ],
+            [
+              "HAS_PHONE",
+              "name"
+            ]
+          ]
+        },
+        {
+          "id": "5c52e3e8-4af3-44ed-be41-63302783a7b5",
+          "title": "HR Model Summary",
+          "query": "CALL db.schema.visualization()\nYIELD nodes, relationships\nWITH [n IN nodes WHERE NOT labels(n)[0] IN [\"HealthcarePro\",\"Beneficiary\",\"Person\",\"Care\",\"Executor\", \"Prescriber\",\"Person\",\"Analyst\",\"Boss\", \"Investigator\",\"Execution\", \"Soin\", \"Prestation\", \"Beneficiaire\", \"PS\",\"Prescripteur\", \"Souscripteur\", \"Prescription\", \"Opticien\", \"Dentiste\", \"Generaliste\", \"Executeur\", \"Pharmacien\", \"Ophtalmologiste\", \"ElementFacturable\", \"_Neodash_Dashboard\", \"Point\", \"Shipment\", \"Investigation\", \"IP\"]] AS nodes, relationships\nWITH nodes, [r IN relationships WHERE startNode(r) IN nodes AND endNode(r) IN nodes] AS rels\nWITH nodes, [r IN rels WHERE NOT type(r) IN [\"ORDONNANCE_PLAUSIBLE\", \"AMONG_50_CLOSEST\"]] AS rels\nRETURN nodes, rels \n\n\n",
+          "width": 7,
+          "height": 7,
+          "x": 0,
+          "y": 7,
+          "type": "graph",
+          "selection": {
+            "Photo": "name",
+            "NormalizedAddress": "name",
+            "Phone": "name",
+            "IBAN": "name",
+            "Employee": "name"
+          },
+          "settings": {},
+          "schema": [
+            [
+              "Photo",
+              "name",
+              "indexes",
+              "constraints"
+            ],
+            [
+              "NormalizedAddress",
+              "name",
+              "indexes",
+              "constraints"
+            ],
+            [
+              "Phone",
+              "name",
+              "indexes",
+              "constraints"
+            ],
+            [
+              "IBAN",
+              "name",
+              "indexes",
+              "constraints"
+            ],
+            [
+              "Employee",
+              "name",
+              "indexes",
+              "constraints"
+            ],
+            [
+              "HAS_IBAN",
+              "name"
+            ],
+            [
+              "HAS_MANAGER",
+              "name"
+            ],
+            [
+              "HAS_ADDRESS",
+              "name"
+            ],
+            [
+              "HAS_PHOTO",
+              "name"
+            ],
+            [
+              "HAS_PHONE",
+              "name"
+            ]
+          ]
+        },
+        {
+          "id": "586c1bd4-15a6-4367-96c2-9e5717e3bc68",
+          "title": "Case Management Model Summary",
+          "query": "CALL db.schema.visualization()\nYIELD nodes, relationships\nWITH [n IN nodes WHERE NOT labels(n)[0] IN [\"Person\",\"Care\",\"Executor\", \"Prescriber\",\"Boss\", \"Investigator\",\"Execution\", \"Soin\", \"Prestation\", \"Beneficiaire\", \"PS\",\"Prescripteur\", \"Souscripteur\", \"Prescription\", \"Opticien\", \"Dentiste\", \"Generaliste\", \"Executeur\", \"Pharmacien\", \"Ophtalmologiste\", \"ElementFacturable\", \"_Neodash_Dashboard\", \"Point\", \"Shipment\", \"IP\", \"Photo\", \"Phone\",\"NormalizedAddress\", \"IBAN\", \"Employee\"]] AS nodes, relationships\nWITH nodes, [r IN relationships WHERE startNode(r) IN nodes AND endNode(r) IN nodes] AS rels\nWITH nodes, [r IN rels WHERE NOT type(r) IN [\"ORDONNANCE_PLAUSIBLE\", \"HAS_MANAGER\", \"AMONG_50_CLOSEST\"]] AS rels\nRETURN nodes, rels\n\n",
+          "width": 8,
+          "height": 7,
+          "x": 7,
+          "y": 7,
+          "type": "graph",
+          "selection": {
+            "Analyst": "name",
+            "HealthcarePro": "name",
+            "Investigation": "name",
+            "Beneficiary": "name"
+          },
+          "settings": {},
+          "schema": [
+            [
+              "Analyst",
+              "name",
+              "indexes",
+              "constraints"
+            ],
+            [
+              "HealthcarePro",
+              "name",
+              "indexes",
+              "constraints"
+            ],
+            [
+              "Investigation",
+              "name",
+              "indexes",
+              "constraints"
+            ],
+            [
+              "Beneficiary",
+              "name",
+              "indexes",
+              "constraints"
+            ],
+            [
+              "HAS_AUTHOR",
+              "name"
+            ],
+            [
+              "NEXT_STATUS",
+              "name"
+            ],
+            [
+              "INVOLVES",
+              "name"
+            ],
+            [
+              "ABOUT",
+              "name"
+            ]
+          ]
+        },
+        {
+          "id": "7f030a5e-4ae3-4e4e-a237-a254580db98d",
+          "title": "",
+          "query": "# Healthcare 7-graph demo\n\n\n\n\n## Dataset presentation\n\nThis is a synthetic dataset created as a demo to address french insurance companies.\nIt contains data about healthcare professionals and the way they interact between each other and with patients (Beneficiary in the insurance company perspective).\n## Database presentation\n\n#### In the same database lives the data for several use cases:\n\n- Healthcare professional fraud detection\n- Healthcare professional fraud investigation\n- Case Management\n- KYW - Know Your Whoever\n- HR database\n\n#### The dataset could be upgraded for other use cases like:\n\n- Healthcare insurance beneficiary fraud detection (not in the demo)\n- Fire, Accidents and Miscellaneous Risks\n- AML/CFT\n\n## Demo presentation\n#### The demo is broken down into parts:\n- NeoDash-based app for:\n  - Know Your Healthcare professional (Pro 360):\n  - Fraud detection scenarios: they are part of the Pro 360 view (Investigation) and some are also processed at the whole database scale in dedicated tabs (Detection).\n    - Unlikely association of cares during same visit \n    - Suspicious distance Pro/Beneficiary\n    - Repeated same acts by a Pro\n    - Prescriber to Executor suspicious flow\n    - Prescriber and Executor are the same person\n  - Case Management: a case can be created in the Pro 360 tab and cases are visible in the Case Management tab\n- Bloom-based investigation:\n  - *show investigations* search phrase\n  - lasso selection\n  - *show common PIIs* scene action [there's a twist here]\n  - *label fraudulent* scene action",
+          "width": 7,
+          "height": 10,
+          "x": 15,
+          "y": 0,
+          "type": "text",
+          "selection": {},
+          "settings": {},
+          "schema": []
+        },
+        {
+          "id": "fdf2fb0b-2b64-43fa-b060-6eda6bba637e",
+          "title": "Twist",
+          "query": "#### The twist\n#### Is\n#### Hidden\n#### Far\n#### Below\n#### .\n#### ..\n#### ....\n#### ....\n#### .....\n#### .....\n#### .....\n#### ....\n#### ....\n#### ...\n#### ..\n#### ..\n#### .\n#### .\n#### ..\n#### ....\n#### ....\n#### .....\n#### .....\n#### .....\n#### ....\n#### ....\n#### ...\n#### ..\n#### ..\n#### .\n#### .\n#### ..\n#### ....\n#### ....\n#### .....\n#### .....\n#### .....\n#### ....\n#### ....\n#### ...\n#### ..\n#### ..\n#### .\n#### .\n#### ..\n#### ....\n#### ....\n#### .....\n#### .....\n#### .....\n#### ....\n#### ....\n#### ...\n#### ..\n#### ..\n#### .\n#### .\n#### ..\n#### ....\n#### ....\n#### .....\n#### .....\n#### .....\n#### ....\n#### ....\n#### ...\n#### ..\n#### ..\n#### .\n#### .\n#### ..\n#### ....\n#### ....\n#### .....\n#### .....\n#### .....\n#### ....\n#### ....\n#### ...\n#### ..\n#### ..\n#### .\n\n\nThe twist is that the *show common PIIs* creates a bridge with between the healthcare and the HR graph and spots internal fraud.\n\n\n",
+          "width": 7,
+          "height": 2,
+          "x": 15,
+          "y": 12,
+          "type": "text",
+          "selection": {},
+          "settings": {},
+          "schema": []
+        },
+        {
+          "id": "88c1a5ac-caa0-4007-9dd9-098a8bf3d873",
+          "title": "Reset the demo (removes cases except Anna's and Wendy's)",
+          "query": "MATCH (n:Investigation WHERE NOT n.author IN ['anna', 'wendy'])\nDETACH DELETE n\n\n\n",
+          "width": 7,
+          "height": 2,
+          "x": 15,
+          "y": 10,
+          "type": "forms",
+          "selection": {},
+          "settings": {
+            "runButtonText": "reset demo",
+            "confirmationMessage": "all new cases have been deleted",
+            "hasResetButton": false,
+            "hasSubmitMessage": false
+          },
+          "schema": []
+        }
+      ]
+    },
+    {
+      "title": "healthcare pro 360",
+      "reports": [
+        {
+          "id": "0c272183-8a94-4fb0-bb86-6df435383ace",
+          "title": "Healthcare professionals",
+          "query": "MATCH (ps:PS&Executeur)\nRETURN apoc.create.vNode([\"PS\"], {first_name: ps.first_name, last_name: ps.last_name, id: ps.id, loc: ps.location})\n\n\n",
+          "width": 12,
+          "height": 8,
+          "x": 0,
+          "y": 0,
+          "type": "map",
+          "selection": {
+            "PS": "last_name"
+          },
+          "settings": {
+            "styleRules": [
+              {
+                "field": "",
+                "condition": "=",
+                "value": "",
+                "customization": "marker color",
+                "customizationValue": "black"
+              }
+            ],
+            "actionsRules": [
+              {
+                "condition": "Click",
+                "field": "PS",
+                "value": "id",
+                "customization": "set variable",
+                "customizationValue": "ps_id"
+              }
+            ],
+            "clusterMarkers": true,
+            "hideSelections": false,
+            "separateOverlappingMarkers": false,
+            "ignoreNonDefinedParams": false,
+            "autorun": true,
+            "layerType": "markers",
+            "nodeColorScheme": "dark2",
+            "defaultNodeSize": "small",
+            "fullscreenEnabled": true
+          },
+          "schema": [
+            [
+              "PS",
+              "last_name",
+              "loc",
+              "id",
+              "first_name"
+            ]
+          ]
+        },
+        {
+          "id": "8a744ed4-46b5-40cd-a728-8beb2238d7b6",
+          "title": "Price / Mean price (normalized)",
+          "query": "MATCH (ps:PS {id: $neodash_ps_id})-[:REALISE]->(:Prestation)-[:CONTIENT]->(soin:Soin)\nWITH soin.care_or_medicine AS care_or_medicine, count(soin.soin_ou_medicament) AS nombre_realisation, avg(soin.prix_facture) AS prix_moyen_facture, avg(soin.prix_conseillé) AS prix_moyen_conseillé\nWHERE prix_moyen_conseillé <> 0.0\nWITH care_or_medicine, nombre_realisation, prix_moyen_facture, prix_moyen_conseillé, round(100.0*(prix_moyen_facture-prix_moyen_conseillé)/prix_moyen_conseillé,2) AS supplément\nRETURN care_or_medicine, 100.0 AS `prix normal`, 100.0+supplément AS `prix facturé moyen`\n\n",
+          "width": 6,
+          "height": 6,
+          "x": 12,
+          "y": 8,
+          "type": "radar",
+          "selection": {
+            "index": "care_or_medicine",
+            "values": [
+              "prix normal",
+              "prix facturé moyen"
+            ]
+          },
+          "settings": {
+            "gridLabelOffset": 16,
+            "fullscreenEnabled": true,
+            "curve": "catmullRomClosed"
+          },
+          "schema": []
+        },
+        {
+          "id": "527bcaee-801f-48a6-b746-d67bb76a588b",
+          "title": "Search a professional",
+          "query": "\n\n",
+          "width": 6,
+          "height": 2,
+          "x": 18,
+          "y": 0,
+          "type": "forms",
+          "selection": {},
+          "settings": {
+            "formFields": [
+              {
+                "type": "Free Text",
+                "settings": {
+                  "type": "Free Text",
+                  "entityType": "recherche",
+                  "parameterName": "neodash_recherche"
+                },
+                "query": "RETURN true;"
+              }
+            ],
+            "hasSubmitButton": false,
+            "description": "Example query : last_name:brokinton~ AND city:Arcsueil~"
+          },
+          "schema": []
+        },
+        {
+          "id": "8d4182d3-27e8-4460-8ec8-61694c5e9036",
+          "title": "Select a heathcare professional",
+          "query": "CALL db.index.fulltext.queryNodes(\"ps_fulltext_index\", $neodash_recherche)\nYIELD node, score\nWITH node ORDER BY score DESC\nRETURN node.id AS ps_id,\nnode.last_name AS `last name`,\nnode.first_name AS `first name`,\n[x IN labels(node) WHERE NOT x IN [\"Person\", \"PS\", \"Executeur\", \"Prescripteur\"]]  AS ls\n\n",
+          "width": 6,
+          "height": 3,
+          "x": 18,
+          "y": 2,
+          "type": "table",
+          "selection": {},
+          "settings": {
+            "actionsRules": [
+              {
+                "condition": "Click",
+                "field": "ps_id",
+                "value": "ps_id",
+                "customization": "set variable",
+                "customizationValue": "ps_id"
+              }
+            ],
+            "columnWidths": "[2, 6, 6, 4]"
+          }
+        },
+        {
+          "id": "6984cbfc-9522-4684-8c76-5e85797d045b",
+          "title": "Volume of executions by type of care",
+          "query": "MATCH (ps:PS {id: $neodash_ps_id})-[:REALISE]->(:Prestation)-[:CONTIENT]->(soin:Soin)\nWITH soin.care_or_medicine AS care_or_medicine, count(soin.soin_ou_medicament) AS nombre_realisation, avg(soin.prix_facture) AS prix_moyen_facture, avg(soin.prix_conseillé) AS prix_moyen_conseillé\nWITH care_or_medicine, nombre_realisation, prix_moyen_facture, prix_moyen_conseillé, round(100.0*(prix_moyen_facture-prix_moyen_conseillé)/prix_moyen_conseillé,2) AS supplément\nRETURN care_or_medicine, nombre_realisation\n\n",
+          "width": 6,
+          "height": 5,
+          "x": 18,
+          "y": 8,
+          "type": "radar",
+          "selection": {
+            "index": "care_or_medicine",
+            "values": [
+              "nombre_realisation"
+            ]
+          },
+          "settings": {
+            "gridLabelOffset": 16,
+            "fullscreenEnabled": true,
+            "curve": "catmullRomClosed"
+          },
+          "schema": []
+        },
+        {
+          "id": "1041e51d-f7c0-4815-a608-00d55673b70a",
+          "title": "Not so probable associations of cares",
+          "query": "MATCH (el:ElementFacturable)-[:ASSOCIATION_DOUTEUSE]->(assoc:ElementFacturable)\nCALL (el, assoc) {\n  MATCH p1 = (:Soin {soin_ou_medicament: el.soin_ou_medicament})<-[:CONTIENT]-(p:Prestation)-[:CONTIENT]->(:Soin {soin_ou_medicament: assoc.soin_ou_medicament}),\n    p2 = (p:Prestation)<-[:REALISE]-(ps:PS)\n    WHERE ps.id = $neodash_ps_id\n  RETURN ps, collect([p1,p2]) AS paths\n}\nRETURN ps, paths \n\n\n",
+          "width": 6,
+          "height": 6,
+          "x": 0,
+          "y": 8,
+          "type": "graph",
+          "selection": {
+            "Person": "id",
+            "PS": "id",
+            "Prescripteur": "id",
+            "Ophtalmologiste": "id",
+            "HealthcarePro": "id",
+            "Prescriber": "id",
+            "Soin": "care_or_medicine",
+            "Care": "care_or_medicine",
+            "Prestation": "(label)",
+            "Prescription": "(label)"
+          },
+          "settings": {
+            "fullscreenEnabled": true
+          },
+          "schema": [
+            [
+              "Person",
+              "country",
+              "pharma_mult",
+              "city",
+              "latitude",
+              "last_name",
+              "ip_address",
+              "siret",
+              "_ord",
+              "iban",
+              "dent_mult",
+              "_ord_2",
+              "location",
+              "id",
+              "first_name",
+              "email",
+              "longitude",
+              "optic_mult"
+            ],
+            [
+              "PS",
+              "country",
+              "pharma_mult",
+              "city",
+              "latitude",
+              "last_name",
+              "ip_address",
+              "siret",
+              "_ord",
+              "iban",
+              "dent_mult",
+              "_ord_2",
+              "location",
+              "id",
+              "first_name",
+              "email",
+              "longitude",
+              "optic_mult"
+            ],
+            [
+              "Prescripteur",
+              "country",
+              "pharma_mult",
+              "city",
+              "latitude",
+              "last_name",
+              "ip_address",
+              "siret",
+              "_ord",
+              "iban",
+              "dent_mult",
+              "_ord_2",
+              "location",
+              "id",
+              "first_name",
+              "email",
+              "longitude",
+              "optic_mult"
+            ],
+            [
+              "Ophtalmologiste",
+              "country",
+              "pharma_mult",
+              "city",
+              "latitude",
+              "last_name",
+              "ip_address",
+              "siret",
+              "_ord",
+              "iban",
+              "dent_mult",
+              "_ord_2",
+              "location",
+              "id",
+              "first_name",
+              "email",
+              "longitude",
+              "optic_mult"
+            ],
+            [
+              "HealthcarePro",
+              "country",
+              "pharma_mult",
+              "city",
+              "latitude",
+              "last_name",
+              "ip_address",
+              "siret",
+              "_ord",
+              "iban",
+              "dent_mult",
+              "_ord_2",
+              "location",
+              "id",
+              "first_name",
+              "email",
+              "longitude",
+              "optic_mult"
+            ],
+            [
+              "Prescriber",
+              "country",
+              "pharma_mult",
+              "city",
+              "latitude",
+              "last_name",
+              "ip_address",
+              "siret",
+              "_ord",
+              "iban",
+              "dent_mult",
+              "_ord_2",
+              "location",
+              "id",
+              "first_name",
+              "email",
+              "longitude",
+              "optic_mult"
+            ],
+            [
+              "Soin",
+              "prix_facture",
+              "prix_conseillé",
+              "care_or_medicine",
+              "soin_ou_medicament"
+            ],
+            [
+              "Care",
+              "prix_facture",
+              "prix_conseillé",
+              "care_or_medicine",
+              "soin_ou_medicament"
+            ],
+            [
+              "Prestation",
+              "date",
+              "domaine"
+            ],
+            [
+              "Prescription",
+              "date",
+              "domaine"
+            ]
+          ]
+        },
+        {
+          "id": "ca76d4c9-8ca4-46af-980d-a840d2ab1783",
+          "title": "Repeated cares",
+          "query": "MATCH path=(a)-[r:MEME_SOINS_SUCCESSIFS]->(b),\n  opt_p_1 = (a)<-[:REALISE]-(ps),\n  opt_p_2 = (b)<-[:REALISE]-()\nWHERE ps.id = $neodash_ps_id\nMATCH (el:ElementFacturable {soin_ou_medicament: r.soin})\n//RETURN el, apoc.create.vRelationship(a, \"SOIN\", {},el), apoc.create.vRelationship(b, \"SOIN\", {},el),\n//path//, opt_p_1, opt_p_2\nRETURN el.care_or_medicine AS care, nodes(path)[0].date AS date\nORDER BY care, date ASC\n\n\n",
+          "width": 6,
+          "height": 6,
+          "x": 6,
+          "y": 8,
+          "type": "table",
+          "selection": {},
+          "settings": {
+            "fullscreenEnabled": true,
+            "layout": "tree-top-down",
+            "relationshipParticles": false
+          },
+          "schema": []
+        },
+        {
+          "id": "1c9b712e-f06d-4f7f-b719-c3d856a7966f",
+          "title": "Selected Professional",
+          "query": "MATCH (ps:PS)\nWHERE ps.id = $neodash_ps_id\nUNWIND keys(ps) AS k\nWITH ps, k\nWHERE NOT k STARTS WITH '_'\nAND NOT k ENDS WITH '_mult'\nRETURN k, ps[k] AS value\n//WHERE k NOT IN ['']\n\n\n\n\n",
+          "width": 6,
+          "height": 8,
+          "x": 12,
+          "y": 0,
+          "type": "table",
+          "selection": {},
+          "settings": {
+            "columnWidths": "[2,5]"
+          }
+        },
+        {
+          "id": "8aa3d992-9052-47a2-b45d-5d8314200ac3",
+          "title": "Ask for investigation",
+          "query": "CALL dbms.showCurrentUser()\nYIELD username AS user\nMATCH (ps:PS)\nWHERE ps.id = $neodash_ps_id\nCREATE (tbi:Investigation {comment:$neodash_comment,\ndate: datetime(),\nstatus: \"1_ToBeInvestigated\",\nauthor:user\n})\nMERGE (e:Employee {id:user})\nMERGE (tbi)-[:HAS_AUTHOR]->(e)\nWITH ps,tbi\nCREATE (tbi)-[:ABOUT]->(ps)\nWITH tbi\nUNWIND $neodash_person_id_involved AS pinv\nMATCH (p_involved:Person)\nWHERE p_involved.id = pinv\nCREATE (tbi)-[:INVOLVES]->(p_involved)\n\n",
+          "width": 6,
+          "height": 8,
+          "x": 18,
+          "y": 13,
+          "type": "forms",
+          "selection": {},
+          "settings": {
+            "formFields": [
+              {
+                "type": "Free Text",
+                "settings": {
+                  "type": "Free Text",
+                  "entityType": "comment",
+                  "parameterName": "neodash_comment"
+                },
+                "query": "RETURN true;"
+              },
+              {
+                "type": "Node Property",
+                "settings": {
+                  "type": "Node Property",
+                  "multiSelector": true,
+                  "multiline": true,
+                  "entityType": "Person",
+                  "propertyType": "id",
+                  "propertyTypeDisplay": "id",
+                  "parameterName": "neodash_person_id_involved",
+                  "id": "involved"
+                },
+                "query": "MATCH (n:`Person`) \nWHERE toLower(toString(n.`id`)) CONTAINS toLower($input) \nRETURN DISTINCT n.`id` as value,  n.`id` as display ORDER BY size(toString(value)) ASC LIMIT 5"
+              }
+            ],
+            "runButtonText": "flag for further investigation",
+            "confirmationMessage": "Form submitted.",
+            "clearParametersAfterSubmit": false
+          },
+          "schema": []
+        },
+        {
+          "id": "b32c5144-a2d0-46c1-88ec-4005661a12f4",
+          "title": "Beneficiary / Professional Long distance ",
+          "query": "MATCH (ps:PS {id:$neodash_ps_id})\nMATCH path = (benef:Beneficiaire)<-[:AU_BENEFICE_DE]-(prestation:Prestation)<-[:REALISE]-(ps)\nWHERE NOT EXISTS {(ps)-[:AMONG_50_CLOSEST]->(benef)}\nWITH benef.last_name AS bénéficiaire, ps.last_name AS `professionnel de santé`, round(point.distance(benef.location, ps.location)/1000.0) AS `distance (km)`, elementId(prestation) AS prestation\nRETURN bénéficiaire, `professionnel de santé`, `distance (km)`, prestation ORDER BY `distance (km)` DESC, prestation DESC LIMIT 100\n\n",
+          "width": 12,
+          "height": 8,
+          "x": 0,
+          "y": 22,
+          "type": "table",
+          "selection": {},
+          "settings": {
+            "actionsRules": [
+              {
+                "condition": "Click",
+                "field": "prestation",
+                "value": "prestation",
+                "customization": "set variable",
+                "customizationValue": "presta"
+              }
+            ]
+          }
+        },
+        {
+          "id": "35345678-1d25-41b0-926d-bff7d3e913f4",
+          "title": "Beneficiary / Professional Long distance Map",
+          "query": "MATCH(p1:Prestation WHERE elementId(p1)=$neodash_presta)\nOPTIONAL MATCH (p1)-[o:ORDONNE]-(p2)\nUNWIND [p1, p2] AS p\nMATCH (benef:Beneficiaire)<-[rrr:AU_BENEFICE_DE]-(p)<-[rr:REALISE]-(ps:PS)\nOPTIONAL MATCH (p)-[rrrr:CONTIENT]-(soin2:Soin)\nRETURN ps, benef, apoc.create.vRelationship(ps,\"REALISE_UN_SOIN\", {},benef)\n\n\n\n\n",
+          "width": 12,
+          "height": 8,
+          "x": 12,
+          "y": 22,
+          "type": "map",
+          "selection": {
+            "Person": "last_name",
+            "PS": "id",
+            "Executeur": "id",
+            "Opticien": "id",
+            "HealthcarePro": "id",
+            "Executor": "id",
+            "Beneficiaire": "id",
+            "Beneficiary": "id",
+            "Prescripteur": "id",
+            "Ophtalmologiste": "id",
+            "Prescriber": "id"
+          },
+          "settings": {},
+          "schema": [
+            [
+              "Person",
+              "country",
+              "pharma_mult",
+              "city",
+              "latitude",
+              "last_name",
+              "ip_address",
+              "siret",
+              "_ord",
+              "iban",
+              "dent_mult",
+              "_ord_2",
+              "location",
+              "id",
+              "first_name",
+              "email",
+              "longitude",
+              "optic_mult"
+            ],
+            [
+              "PS",
+              "country",
+              "pharma_mult",
+              "city",
+              "latitude",
+              "last_name",
+              "ip_address",
+              "siret",
+              "_ord",
+              "iban",
+              "dent_mult",
+              "_ord_2",
+              "location",
+              "id",
+              "first_name",
+              "email",
+              "longitude",
+              "optic_mult"
+            ],
+            [
+              "Executeur",
+              "country",
+              "pharma_mult",
+              "city",
+              "latitude",
+              "last_name",
+              "ip_address",
+              "siret",
+              "_ord",
+              "iban",
+              "dent_mult",
+              "_ord_2",
+              "location",
+              "id",
+              "first_name",
+              "email",
+              "longitude",
+              "optic_mult"
+            ],
+            [
+              "Opticien",
+              "country",
+              "pharma_mult",
+              "city",
+              "latitude",
+              "last_name",
+              "ip_address",
+              "siret",
+              "_ord",
+              "iban",
+              "dent_mult",
+              "_ord_2",
+              "location",
+              "id",
+              "first_name",
+              "email",
+              "longitude",
+              "optic_mult"
+            ],
+            [
+              "HealthcarePro",
+              "country",
+              "pharma_mult",
+              "city",
+              "latitude",
+              "last_name",
+              "ip_address",
+              "siret",
+              "_ord",
+              "iban",
+              "dent_mult",
+              "_ord_2",
+              "location",
+              "id",
+              "first_name",
+              "email",
+              "longitude",
+              "optic_mult"
+            ],
+            [
+              "Executor",
+              "country",
+              "pharma_mult",
+              "city",
+              "latitude",
+              "last_name",
+              "ip_address",
+              "siret",
+              "_ord",
+              "iban",
+              "dent_mult",
+              "_ord_2",
+              "location",
+              "id",
+              "first_name",
+              "email",
+              "longitude",
+              "optic_mult"
+            ],
+            [
+              "Beneficiaire",
+              "country",
+              "pharma_mult",
+              "city",
+              "latitude",
+              "last_name",
+              "ip_address",
+              "_ord",
+              "iban",
+              "dent_mult",
+              "_ord_2",
+              "location",
+              "id",
+              "first_name",
+              "email",
+              "longitude",
+              "optic_mult"
+            ],
+            [
+              "Beneficiary",
+              "country",
+              "pharma_mult",
+              "city",
+              "latitude",
+              "last_name",
+              "ip_address",
+              "_ord",
+              "iban",
+              "dent_mult",
+              "_ord_2",
+              "location",
+              "id",
+              "first_name",
+              "email",
+              "longitude",
+              "optic_mult"
+            ],
+            [
+              "REALISE_UN_SOIN"
+            ],
+            [
+              "Prescripteur",
+              "country",
+              "pharma_mult",
+              "city",
+              "latitude",
+              "last_name",
+              "ip_address",
+              "siret",
+              "_ord",
+              "iban",
+              "dent_mult",
+              "_ord_2",
+              "location",
+              "id",
+              "first_name",
+              "email",
+              "longitude",
+              "optic_mult"
+            ],
+            [
+              "Ophtalmologiste",
+              "country",
+              "pharma_mult",
+              "city",
+              "latitude",
+              "last_name",
+              "ip_address",
+              "siret",
+              "_ord",
+              "iban",
+              "dent_mult",
+              "_ord_2",
+              "location",
+              "id",
+              "first_name",
+              "email",
+              "longitude",
+              "optic_mult"
+            ],
+            [
+              "Prescriber",
+              "country",
+              "pharma_mult",
+              "city",
+              "latitude",
+              "last_name",
+              "ip_address",
+              "siret",
+              "_ord",
+              "iban",
+              "dent_mult",
+              "_ord_2",
+              "location",
+              "id",
+              "first_name",
+              "email",
+              "longitude",
+              "optic_mult"
+            ]
+          ]
+        },
+        {
+          "id": "096387dd-bc9f-4f94-a406-dc73ce3c770d",
+          "title": "Beneficiary / Professional all interactions",
+          "query": "MATCH(p1:Prestation)<-[rr:REALISE|ORDONNE]-(:PS {id:$neodash_ps_id})\nOPTIONAL MATCH (p1)-[o:ORDONNE]-(p2)\nUNWIND [p1, p2] AS p\nMATCH (benef:Beneficiaire)<-[rrr:AU_BENEFICE_DE]-(p)<-[rr:REALISE]-(ps)\nOPTIONAL MATCH (p)-[rrrr:CONTIENT]-(soin2:Soin)\nRETURN ps, benef, apoc.create.vRelationship(ps,\"REALISE_UN_SOIN\", {},benef)\n",
+          "width": 18,
+          "height": 8,
+          "x": 0,
+          "y": 14,
+          "type": "map",
+          "selection": {
+            "Person": "last_name",
+            "PS": "id",
+            "Prescripteur": "id",
+            "Ophtalmologiste": "id",
+            "HealthcarePro": "id",
+            "Prescriber": "id",
+            "Beneficiaire": "id",
+            "Beneficiary": "id",
+            "REALISE_UN_SOIN": "(label)"
+          },
+          "settings": {},
+          "schema": [
+            [
+              "Person",
+              "country",
+              "pharma_mult",
+              "city",
+              "latitude",
+              "last_name",
+              "ip_address",
+              "siret",
+              "_ord",
+              "iban",
+              "dent_mult",
+              "_ord_2",
+              "location",
+              "id",
+              "first_name",
+              "email",
+              "longitude",
+              "optic_mult"
+            ],
+            [
+              "PS",
+              "country",
+              "pharma_mult",
+              "city",
+              "latitude",
+              "last_name",
+              "ip_address",
+              "siret",
+              "_ord",
+              "iban",
+              "dent_mult",
+              "_ord_2",
+              "location",
+              "id",
+              "first_name",
+              "email",
+              "longitude",
+              "optic_mult"
+            ],
+            [
+              "Prescripteur",
+              "country",
+              "pharma_mult",
+              "city",
+              "latitude",
+              "last_name",
+              "ip_address",
+              "siret",
+              "_ord",
+              "iban",
+              "dent_mult",
+              "_ord_2",
+              "location",
+              "id",
+              "first_name",
+              "email",
+              "longitude",
+              "optic_mult"
+            ],
+            [
+              "Ophtalmologiste",
+              "country",
+              "pharma_mult",
+              "city",
+              "latitude",
+              "last_name",
+              "ip_address",
+              "siret",
+              "_ord",
+              "iban",
+              "dent_mult",
+              "_ord_2",
+              "location",
+              "id",
+              "first_name",
+              "email",
+              "longitude",
+              "optic_mult"
+            ],
+            [
+              "HealthcarePro",
+              "country",
+              "pharma_mult",
+              "city",
+              "latitude",
+              "last_name",
+              "ip_address",
+              "siret",
+              "_ord",
+              "iban",
+              "dent_mult",
+              "_ord_2",
+              "location",
+              "id",
+              "first_name",
+              "email",
+              "longitude",
+              "optic_mult"
+            ],
+            [
+              "Prescriber",
+              "country",
+              "pharma_mult",
+              "city",
+              "latitude",
+              "last_name",
+              "ip_address",
+              "siret",
+              "_ord",
+              "iban",
+              "dent_mult",
+              "_ord_2",
+              "location",
+              "id",
+              "first_name",
+              "email",
+              "longitude",
+              "optic_mult"
+            ],
+            [
+              "Beneficiaire",
+              "country",
+              "pharma_mult",
+              "city",
+              "latitude",
+              "last_name",
+              "ip_address",
+              "_ord",
+              "iban",
+              "dent_mult",
+              "_ord_2",
+              "location",
+              "id",
+              "first_name",
+              "email",
+              "longitude",
+              "optic_mult"
+            ],
+            [
+              "Beneficiary",
+              "country",
+              "pharma_mult",
+              "city",
+              "latitude",
+              "last_name",
+              "ip_address",
+              "_ord",
+              "iban",
+              "dent_mult",
+              "_ord_2",
+              "location",
+              "id",
+              "first_name",
+              "email",
+              "longitude",
+              "optic_mult"
+            ],
+            [
+              "REALISE_UN_SOIN"
+            ]
+          ]
+        },
+        {
+          "id": "e637d1a0-531b-47aa-a5fa-73fc709484ab",
+          "title": " Co-patients volume vs distance",
+          "query": "MATCH path = (ps1:PS&Prescripteur)-[:REALISE]->(presta1:Prestation&Prescription)-[:ORDONNE]->(presta2:Prestation&Execution)<-[:REALISE]-(ps2:PS&Executeur)\nWHERE ps1 <> ps2\nAND $neodash_ps_id IN [ps1.id, ps2.id]\nWITH ps1, ps2, collect(path) AS paths, collect(presta2) AS executions, COUNT {(ps1)-[:AMONG_50_CLOSEST]->()<-[:AMONG_50_CLOSEST]-(ps2)} AS volume_copatientele\nWITH ps1.id AS ps1_id, ps2.id AS ps2_id, ps1, ps2, round(apoc.coll.sum([ex IN executions | apoc.coll.sum([0.0]+[(ex)-[:CONTIENT]->(soin:Soin) | soin.prix_facture])]),2) AS volume, round(point.distance(ps1.location, ps2.location)/1000,2) AS distance_km, volume_copatientele\nORDER BY (volume*distance_km)/(1+volume_copatientele) DESC\nRETURN ps1_id, ps2_id, ps1, ps2, ps1.last_name AS ps1_name, ps2.last_name AS ps2_name, volume, distance_km, volume_copatientele\n\n\n",
+          "width": 12,
+          "height": 7,
+          "x": 0,
+          "y": 30,
+          "type": "table",
+          "selection": {},
+          "settings": {
+            "actionsRules": [
+              {
+                "condition": "Click",
+                "field": "ps1_id",
+                "value": "ps1_id",
+                "customization": "set variable",
+                "customizationValue": "ps_id"
+              },
+              {
+                "condition": "Click",
+                "field": "ps2_id",
+                "value": "ps2_id",
+                "customization": "set variable",
+                "customizationValue": "ps2_id"
+              }
+            ]
+          }
+        },
+        {
+          "id": "55b8a311-8a8e-4ce7-b1d5-1c8a81a9b84c",
+          "title": " Co-patients volume vs distance",
+          "query": "MATCH (ps)\nWHERE ps.id = $neodash_ps_id\nRETURN ps\nUNION\nMATCH (ps)\nWHERE ps.id = $neodash_ps2_id\nRETURN ps",
+          "width": 12,
+          "height": 7,
+          "x": 12,
+          "y": 30,
+          "type": "map",
+          "selection": {
+            "Person": "last_name",
+            "PS": "id",
+            "Prescripteur": "id",
+            "Ophtalmologiste": "id",
+            "HealthcarePro": "id",
+            "Prescriber": "id",
+            "Executeur": "id",
+            "Opticien": "id",
+            "Executor": "id"
+          },
+          "settings": {},
+          "schema": [
+            [
+              "Person",
+              "country",
+              "pharma_mult",
+              "city",
+              "latitude",
+              "last_name",
+              "ip_address",
+              "siret",
+              "_ord",
+              "iban",
+              "dent_mult",
+              "_ord_2",
+              "location",
+              "id",
+              "first_name",
+              "email",
+              "longitude",
+              "optic_mult"
+            ],
+            [
+              "PS",
+              "country",
+              "pharma_mult",
+              "city",
+              "latitude",
+              "last_name",
+              "ip_address",
+              "siret",
+              "_ord",
+              "iban",
+              "dent_mult",
+              "_ord_2",
+              "location",
+              "id",
+              "first_name",
+              "email",
+              "longitude",
+              "optic_mult"
+            ],
+            [
+              "Prescripteur",
+              "country",
+              "pharma_mult",
+              "city",
+              "latitude",
+              "last_name",
+              "ip_address",
+              "siret",
+              "_ord",
+              "iban",
+              "dent_mult",
+              "_ord_2",
+              "location",
+              "id",
+              "first_name",
+              "email",
+              "longitude",
+              "optic_mult"
+            ],
+            [
+              "Ophtalmologiste",
+              "country",
+              "pharma_mult",
+              "city",
+              "latitude",
+              "last_name",
+              "ip_address",
+              "siret",
+              "_ord",
+              "iban",
+              "dent_mult",
+              "_ord_2",
+              "location",
+              "id",
+              "first_name",
+              "email",
+              "longitude",
+              "optic_mult"
+            ],
+            [
+              "HealthcarePro",
+              "country",
+              "pharma_mult",
+              "city",
+              "latitude",
+              "last_name",
+              "ip_address",
+              "siret",
+              "_ord",
+              "iban",
+              "dent_mult",
+              "_ord_2",
+              "location",
+              "id",
+              "first_name",
+              "email",
+              "longitude",
+              "optic_mult"
+            ],
+            [
+              "Prescriber",
+              "country",
+              "pharma_mult",
+              "city",
+              "latitude",
+              "last_name",
+              "ip_address",
+              "siret",
+              "_ord",
+              "iban",
+              "dent_mult",
+              "_ord_2",
+              "location",
+              "id",
+              "first_name",
+              "email",
+              "longitude",
+              "optic_mult"
+            ],
+            [
+              "Executeur",
+              "country",
+              "pharma_mult",
+              "city",
+              "latitude",
+              "last_name",
+              "ip_address",
+              "siret",
+              "_ord",
+              "iban",
+              "dent_mult",
+              "_ord_2",
+              "location",
+              "id",
+              "first_name",
+              "email",
+              "longitude",
+              "optic_mult"
+            ],
+            [
+              "Opticien",
+              "country",
+              "pharma_mult",
+              "city",
+              "latitude",
+              "last_name",
+              "ip_address",
+              "siret",
+              "_ord",
+              "iban",
+              "dent_mult",
+              "_ord_2",
+              "location",
+              "id",
+              "first_name",
+              "email",
+              "longitude",
+              "optic_mult"
+            ],
+            [
+              "Executor",
+              "country",
+              "pharma_mult",
+              "city",
+              "latitude",
+              "last_name",
+              "ip_address",
+              "siret",
+              "_ord",
+              "iban",
+              "dent_mult",
+              "_ord_2",
+              "location",
+              "id",
+              "first_name",
+              "email",
+              "longitude",
+              "optic_mult"
+            ]
+          ]
+        },
+        {
+          "id": "40bd1724-f5d5-4aa5-a9ae-9b23cd164004",
+          "title": "Roles",
+          "query": "MATCH (ps:PS WHERE ps.id = $neodash_ps_id)\nUNWIND labels(ps) AS label\nWITH label WHERE NOT label IN ['Person', 'PS']\nRETURN {\n    `Prescripteur`: 'Prescriber',\n    `Executeur`: 'Executor',\n    `Dentiste`: 'Dentist',\n    `Opticien`: 'Optician',\n    `Souscripteur`: 'Subscriber',\n    `Pharmacien`: 'Pharmacist',\n    `Ophtalmologiste`: 'Ophthalmologist',\n    `Generaliste`: 'General practitioner'\n}[label] AS roles\n\n\n",
+          "width": 6,
+          "height": 3,
+          "x": 18,
+          "y": 5,
+          "type": "table",
+          "selection": {},
+          "settings": {}
+        }
+      ]
+    },
+    {
+      "title": "Fraud Scenario 1: Suspicious distance to patient",
+      "reports": [
+        {
+          "id": "654d5dd1-9d7f-4abb-817f-f5a3f1e8aca8",
+          "title": "Long distance between beneficiary and executor",
+          "query": "MATCH path = (benef:Beneficiaire)<-[:AU_BENEFICE_DE]-(prestation:Prestation)<-[:REALISE]-(ps:PS)\nWHERE NOT EXISTS {(ps)-[:AMONG_50_CLOSEST]->(benef)}\nWITH benef.last_name AS bénéficiaire, ps.last_name AS `professionnel de santé`, round(point.distance(benef.location, ps.location)/1000.0) AS `distance (km)`, elementId(prestation) AS prestation\nRETURN bénéficiaire AS beneficiary, `professionnel de santé` AS healthcare_professional, `distance (km)`, prestation ORDER BY `distance (km)` DESC, prestation DESC LIMIT 100\n\n\n\n",
+          "width": 10,
+          "height": 7,
+          "x": 0,
+          "y": 0,
+          "type": "table",
+          "selection": {},
+          "settings": {
+            "actionsRules": [
+              {
+                "condition": "Click",
+                "field": "prestation",
+                "value": "prestation",
+                "customization": "set variable",
+                "customizationValue": "presta"
+              }
+            ],
+            "columnWidths": "[2,2,1,2,5]"
+          },
+          "schema": []
+        },
+        {
+          "id": "6d4f5349-ee7c-4b9d-aa12-1c8fd7a9e9b8",
+          "title": "",
+          "query": "MATCH(p1:Prestation WHERE elementId(p1)=$neodash_presta)\nOPTIONAL MATCH (p1)-[o:ORDONNE]-(p2)\nUNWIND [p1, p2] AS p\nOPTIONAL MATCH (benef:Beneficiaire)<-[rrr:AU_BENEFICE_DE]-(p)<-[rr:REALISE]-(ps:PS)\nOPTIONAL MATCH (p)-[rrrr:CONTIENT]-(soin2:Soin)\nRETURN *\n\n\n\n",
+          "width": 6,
+          "height": 7,
+          "x": 10,
+          "y": 0,
+          "type": "graph",
+          "selection": {
+            "Person": "last_name",
+            "Beneficiaire": "last_name",
+            "Beneficiary": "last_name",
+            "ORDONNE": "(label)",
+            "Prestation": "domaine",
+            "Execution": "domaine",
+            "Prescription": "domaine",
+            "PS": "last_name",
+            "Executeur": "last_name",
+            "Opticien": "id",
+            "HealthcarePro": "id",
+            "Executor": "last_name",
+            "REALISE": "(label)",
+            "AU_BENEFICE_DE": "(label)",
+            "CONTIENT": "(label)",
+            "Soin": "(label)",
+            "Care": "(label)",
+            "Prescripteur": "id",
+            "Ophtalmologiste": "id",
+            "Prescriber": "last_name"
+          },
+          "settings": {
+            "actionsRules": [
+              {
+                "condition": "onNodeClick",
+                "field": "PS",
+                "value": "id",
+                "customization": "set variable",
+                "customizationValue": "ps_id"
+              },
+              {
+                "condition": "onNodeClick",
+                "field": "PS",
+                "value": "last_name",
+                "customization": "set variable",
+                "customizationValue": "recherche"
+              },
+              {
+                "condition": "onNodeClick",
+                "field": "PS",
+                "value": "1/healthcare pro 360",
+                "customization": "set page",
+                "customizationValue": ""
+              }
+            ]
+          },
+          "schema": [
+            [
+              "Person",
+              "country",
+              "pharma_mult",
+              "city",
+              "latitude",
+              "last_name",
+              "ip_address",
+              "_ord",
+              "iban",
+              "dent_mult",
+              "_ord_2",
+              "location",
+              "id",
+              "first_name",
+              "email",
+              "longitude",
+              "optic_mult",
+              "siret"
+            ],
+            [
+              "Beneficiaire",
+              "country",
+              "pharma_mult",
+              "city",
+              "latitude",
+              "last_name",
+              "ip_address",
+              "_ord",
+              "iban",
+              "dent_mult",
+              "_ord_2",
+              "location",
+              "id",
+              "first_name",
+              "email",
+              "longitude",
+              "optic_mult"
+            ],
+            [
+              "Beneficiary",
+              "country",
+              "pharma_mult",
+              "city",
+              "latitude",
+              "last_name",
+              "ip_address",
+              "_ord",
+              "iban",
+              "dent_mult",
+              "_ord_2",
+              "location",
+              "id",
+              "first_name",
+              "email",
+              "longitude",
+              "optic_mult"
+            ],
+            [
+              "ORDONNE"
+            ],
+            [
+              "Prestation",
+              "date",
+              "domaine"
+            ],
+            [
+              "Execution",
+              "date",
+              "domaine"
+            ],
+            [
+              "Prescription",
+              "date",
+              "domaine"
+            ],
+            [
+              "PS",
+              "country",
+              "pharma_mult",
+              "city",
+              "latitude",
+              "last_name",
+              "ip_address",
+              "siret",
+              "_ord",
+              "iban",
+              "dent_mult",
+              "_ord_2",
+              "location",
+              "id",
+              "first_name",
+              "email",
+              "longitude",
+              "optic_mult"
+            ],
+            [
+              "Executeur",
+              "country",
+              "pharma_mult",
+              "city",
+              "latitude",
+              "last_name",
+              "ip_address",
+              "siret",
+              "_ord",
+              "iban",
+              "dent_mult",
+              "_ord_2",
+              "location",
+              "id",
+              "first_name",
+              "email",
+              "longitude",
+              "optic_mult"
+            ],
+            [
+              "Opticien",
+              "country",
+              "pharma_mult",
+              "city",
+              "latitude",
+              "last_name",
+              "ip_address",
+              "siret",
+              "_ord",
+              "iban",
+              "dent_mult",
+              "_ord_2",
+              "location",
+              "id",
+              "first_name",
+              "email",
+              "longitude",
+              "optic_mult"
+            ],
+            [
+              "HealthcarePro",
+              "country",
+              "pharma_mult",
+              "city",
+              "latitude",
+              "last_name",
+              "ip_address",
+              "siret",
+              "_ord",
+              "iban",
+              "dent_mult",
+              "_ord_2",
+              "location",
+              "id",
+              "first_name",
+              "email",
+              "longitude",
+              "optic_mult"
+            ],
+            [
+              "Executor",
+              "country",
+              "pharma_mult",
+              "city",
+              "latitude",
+              "last_name",
+              "ip_address",
+              "siret",
+              "_ord",
+              "iban",
+              "dent_mult",
+              "_ord_2",
+              "location",
+              "id",
+              "first_name",
+              "email",
+              "longitude",
+              "optic_mult"
+            ],
+            [
+              "REALISE"
+            ],
+            [
+              "AU_BENEFICE_DE"
+            ],
+            [
+              "CONTIENT"
+            ],
+            [
+              "Soin",
+              "prix_facture",
+              "prix_conseillé",
+              "care_or_medicine",
+              "soin_ou_medicament"
+            ],
+            [
+              "Care",
+              "prix_facture",
+              "prix_conseillé",
+              "care_or_medicine",
+              "soin_ou_medicament"
+            ],
+            [
+              "Prescripteur",
+              "country",
+              "pharma_mult",
+              "city",
+              "latitude",
+              "last_name",
+              "ip_address",
+              "siret",
+              "_ord",
+              "iban",
+              "dent_mult",
+              "_ord_2",
+              "location",
+              "id",
+              "first_name",
+              "email",
+              "longitude",
+              "optic_mult"
+            ],
+            [
+              "Ophtalmologiste",
+              "country",
+              "pharma_mult",
+              "city",
+              "latitude",
+              "last_name",
+              "ip_address",
+              "siret",
+              "_ord",
+              "iban",
+              "dent_mult",
+              "_ord_2",
+              "location",
+              "id",
+              "first_name",
+              "email",
+              "longitude",
+              "optic_mult"
+            ],
+            [
+              "Prescriber",
+              "country",
+              "pharma_mult",
+              "city",
+              "latitude",
+              "last_name",
+              "ip_address",
+              "siret",
+              "_ord",
+              "iban",
+              "dent_mult",
+              "_ord_2",
+              "location",
+              "id",
+              "first_name",
+              "email",
+              "longitude",
+              "optic_mult"
+            ]
+          ]
+        },
+        {
+          "id": "64883789-fb4e-4c2c-be6b-30a5a0c3168f",
+          "title": "",
+          "query": "MATCH(p1:Prestation WHERE elementId(p1)=$neodash_presta)\nOPTIONAL MATCH (p1)-[o:ORDONNE]-(p2)\nUNWIND [p1, p2] AS p\nOPTIONAL MATCH (benef:Beneficiaire)<-[rrr:AU_BENEFICE_DE]-(p)<-[rr:REALISE]-(ps:PS)\nOPTIONAL MATCH (p)-[rrrr:CONTIENT]-(soin2:Soin)\nRETURN ps, benef, apoc.create.vRelationship(ps,\"REALISE_UN_SOIN\", {},benef)\n\n\n\n\n\n",
+          "width": 8,
+          "height": 7,
+          "x": 16,
+          "y": 0,
+          "type": "map",
+          "selection": {
+            "Person": "last_name",
+            "PS": "id",
+            "Executeur": "id",
+            "Opticien": "id",
+            "HealthcarePro": "id",
+            "Executor": "id",
+            "Beneficiaire": "id",
+            "Beneficiary": "id",
+            "REALISE_UN_SOIN": "(label)",
+            "Prescripteur": "id",
+            "Ophtalmologiste": "id",
+            "Prescriber": "id"
+          },
+          "settings": {
+            "clusterMarkers": true,
+            "separateOverlappingMarkers": true
+          },
+          "schema": [
+            [
+              "Person",
+              "country",
+              "pharma_mult",
+              "city",
+              "latitude",
+              "last_name",
+              "ip_address",
+              "siret",
+              "_ord",
+              "iban",
+              "dent_mult",
+              "_ord_2",
+              "location",
+              "id",
+              "first_name",
+              "email",
+              "longitude",
+              "optic_mult"
+            ],
+            [
+              "PS",
+              "country",
+              "pharma_mult",
+              "city",
+              "latitude",
+              "last_name",
+              "ip_address",
+              "siret",
+              "_ord",
+              "iban",
+              "dent_mult",
+              "_ord_2",
+              "location",
+              "id",
+              "first_name",
+              "email",
+              "longitude",
+              "optic_mult"
+            ],
+            [
+              "Executeur",
+              "country",
+              "pharma_mult",
+              "city",
+              "latitude",
+              "last_name",
+              "ip_address",
+              "siret",
+              "_ord",
+              "iban",
+              "dent_mult",
+              "_ord_2",
+              "location",
+              "id",
+              "first_name",
+              "email",
+              "longitude",
+              "optic_mult"
+            ],
+            [
+              "Opticien",
+              "country",
+              "pharma_mult",
+              "city",
+              "latitude",
+              "last_name",
+              "ip_address",
+              "siret",
+              "_ord",
+              "iban",
+              "dent_mult",
+              "_ord_2",
+              "location",
+              "id",
+              "first_name",
+              "email",
+              "longitude",
+              "optic_mult"
+            ],
+            [
+              "HealthcarePro",
+              "country",
+              "pharma_mult",
+              "city",
+              "latitude",
+              "last_name",
+              "ip_address",
+              "siret",
+              "_ord",
+              "iban",
+              "dent_mult",
+              "_ord_2",
+              "location",
+              "id",
+              "first_name",
+              "email",
+              "longitude",
+              "optic_mult"
+            ],
+            [
+              "Executor",
+              "country",
+              "pharma_mult",
+              "city",
+              "latitude",
+              "last_name",
+              "ip_address",
+              "siret",
+              "_ord",
+              "iban",
+              "dent_mult",
+              "_ord_2",
+              "location",
+              "id",
+              "first_name",
+              "email",
+              "longitude",
+              "optic_mult"
+            ],
+            [
+              "Beneficiaire",
+              "country",
+              "pharma_mult",
+              "city",
+              "latitude",
+              "last_name",
+              "ip_address",
+              "_ord",
+              "iban",
+              "dent_mult",
+              "_ord_2",
+              "location",
+              "id",
+              "first_name",
+              "email",
+              "longitude",
+              "optic_mult"
+            ],
+            [
+              "Beneficiary",
+              "country",
+              "pharma_mult",
+              "city",
+              "latitude",
+              "last_name",
+              "ip_address",
+              "_ord",
+              "iban",
+              "dent_mult",
+              "_ord_2",
+              "location",
+              "id",
+              "first_name",
+              "email",
+              "longitude",
+              "optic_mult"
+            ],
+            [
+              "REALISE_UN_SOIN"
+            ],
+            [
+              "Prescripteur",
+              "country",
+              "pharma_mult",
+              "city",
+              "latitude",
+              "last_name",
+              "ip_address",
+              "siret",
+              "_ord",
+              "iban",
+              "dent_mult",
+              "_ord_2",
+              "location",
+              "id",
+              "first_name",
+              "email",
+              "longitude",
+              "optic_mult"
+            ],
+            [
+              "Ophtalmologiste",
+              "country",
+              "pharma_mult",
+              "city",
+              "latitude",
+              "last_name",
+              "ip_address",
+              "siret",
+              "_ord",
+              "iban",
+              "dent_mult",
+              "_ord_2",
+              "location",
+              "id",
+              "first_name",
+              "email",
+              "longitude",
+              "optic_mult"
+            ],
+            [
+              "Prescriber",
+              "country",
+              "pharma_mult",
+              "city",
+              "latitude",
+              "last_name",
+              "ip_address",
+              "siret",
+              "_ord",
+              "iban",
+              "dent_mult",
+              "_ord_2",
+              "location",
+              "id",
+              "first_name",
+              "email",
+              "longitude",
+              "optic_mult"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Fraud Scenario 2: Repeated actions",
+      "reports": [
+        {
+          "id": "d5be0579-658c-4347-b62a-ba47bdc24cd6",
+          "title": "Healthcare professional with same care act repeated",
+          "query": "MATCH path=(a)-[r:MEME_SOINS_SUCCESSIFS]->(b),\n  opt_p_1 = (a)<-[:REALISE]-(ps),\n  opt_p_2 = (b)<-[:REALISE]-()\nWHERE r.frequence_normale <= toFloat($neodash_frequence)/100.0 AND r.delta_jours <= $neodash_days\nRETURN DISTINCT ps.id AS professional, ps.last_name AS last_name, ps.first_name AS first_name//, collect([path, opt_p_1, opt_p_2]) AS paths\n",
+          "width": 17,
+          "height": 6,
+          "x": 6,
+          "y": 0,
+          "type": "table",
+          "selection": {},
+          "settings": {
+            "backgroundColor": "#FFFFFF",
+            "nodeColorScheme": "paired",
+            "actionsRules": [
+              {
+                "condition": "Click",
+                "field": "professional",
+                "value": "id",
+                "customization": "set variable",
+                "customizationValue": "ps_id"
+              },
+              {
+                "condition": "Click",
+                "field": "professional",
+                "value": "1/healthcare pro 360",
+                "customization": "set page",
+                "customizationValue": ""
+              },
+              {
+                "condition": "Click",
+                "field": "professional",
+                "value": "last_name",
+                "customization": "set variable",
+                "customizationValue": "recherche"
+              }
+            ]
+          },
+          "schema": []
+        },
+        {
+          "id": "6a4201c0-b29a-4143-8938-0d29fc5bf3e5",
+          "title": "Max delay between two similar acts to consider",
+          "query": "RETURN coalesce(toInteger($input),365) AS days\n\n\n",
+          "width": 6,
+          "height": 2,
+          "x": 0,
+          "y": 0,
+          "type": "select",
+          "selection": {},
+          "settings": {
+            "type": "Custom Query",
+            "entityType": "days",
+            "parameterName": "neodash_days"
+          },
+          "schema": []
+        },
+        {
+          "id": "483c91b1-e6de-43ee-9cd9-249683da6148",
+          "title": "Consider rare events up to frequency (% of acts)",
+          "query": "RETURN coalesce(toInteger($input),100) AS frequence\n\n\n",
+          "width": 6,
+          "height": 2,
+          "x": 0,
+          "y": 2,
+          "type": "select",
+          "selection": {},
+          "settings": {
+            "type": "Custom Query",
+            "entityType": "frequence",
+            "parameterName": "neodash_frequence"
+          },
+          "schema": []
+        }
+      ]
+    },
+    {
+      "title": "Fraud Scenario 3: prescriber/executor close relationship",
+      "reports": [
+        {
+          "id": "e8c1a553-177d-40e9-8197-111a3c644d6c",
+          "title": "Supspiciously-linked prescribers and executors",
+          "query": "MATCH path = (ps1:PS&Prescripteur)-[:REALISE]->(presta1:Prestation&Prescription)-[:ORDONNE]->(presta2:Prestation&Execution)<-[:REALISE]-(ps2:PS&Executeur)\nWHERE ps1 <> ps2\nWITH ps1, ps2, collect(path) AS paths, collect(presta2) AS executions, COUNT {(ps1)-[:AMONG_50_CLOSEST]->()<-[:AMONG_50_CLOSEST]-(ps2)} AS volume_copatientele\nWITH ps1.id AS ps1_id, ps2.id AS ps2_id, ps1, ps2, round(apoc.coll.sum([ex IN executions | apoc.coll.sum([0.0]+[(ex)-[:CONTIENT]->(soin:Soin) | soin.prix_facture])]),2) AS volume, round(point.distance(ps1.location, ps2.location)/1000,2) AS distance_km, volume_copatientele\nORDER BY (volume*distance_km)/(1+volume_copatientele) DESC\nRETURN ps1_id, ps2_id, ps1, ps2, ps1.last_name AS ps1_name, ps2.last_name AS ps2_name, volume, distance_km, volume_copatientele",
+          "width": 16,
+          "height": 7,
+          "x": 0,
+          "y": 0,
+          "type": "table",
+          "selection": {},
+          "settings": {
+            "actionsRules": [
+              {
+                "condition": "Click",
+                "field": "ps1_id",
+                "value": "ps1_id",
+                "customization": "set variable",
+                "customizationValue": "ps1_id"
+              },
+              {
+                "condition": "Click",
+                "field": "ps2_id",
+                "value": "ps2_id",
+                "customization": "set variable",
+                "customizationValue": "ps2_id"
+              },
+              {
+                "condition": "Click",
+                "field": "ps1_id",
+                "value": "ps1_id",
+                "customization": "set variable",
+                "customizationValue": "ps_id"
+              },
+              {
+                "condition": "Click",
+                "field": "ps2_id",
+                "value": "ps2_id",
+                "customization": "set variable",
+                "customizationValue": "ps_id"
+              },
+              {
+                "condition": "Click",
+                "field": "ps1_id",
+                "value": "ps1_name",
+                "customization": "set variable",
+                "customizationValue": "recherche"
+              },
+              {
+                "condition": "Click",
+                "field": "ps1_id",
+                "value": "ps2_name",
+                "customization": "set variable",
+                "customizationValue": "recherche"
+              }
+            ]
+          }
+        },
+        {
+          "id": "02b4996b-e993-4ff2-9e1c-b3de5a5986f2",
+          "title": "Supspiciously-linked prescribers and executor",
+          "query": "MATCH (ps)\nWHERE ps.id = $neodash_ps1_id\nRETURN ps\nUNION\nMATCH (ps)\nWHERE ps.id = $neodash_ps2_id\nRETURN ps\n\n",
+          "width": 8,
+          "height": 7,
+          "x": 16,
+          "y": 0,
+          "type": "map",
+          "selection": {
+            "Person": "last_name",
+            "PS": "id",
+            "Prescripteur": "id",
+            "Ophtalmologiste": "id",
+            "HealthcarePro": "id",
+            "Prescriber": "id",
+            "Executeur": "id",
+            "Opticien": "id",
+            "Executor": "id"
+          },
+          "settings": {
+            "actionsRules": [
+              {
+                "condition": "Click",
+                "field": "Person",
+                "value": "id",
+                "customization": "set variable",
+                "customizationValue": "ps_id"
+              }
+            ]
+          },
+          "schema": [
+            [
+              "Person",
+              "country",
+              "pharma_mult",
+              "city",
+              "latitude",
+              "last_name",
+              "ip_address",
+              "siret",
+              "_ord",
+              "iban",
+              "dent_mult",
+              "_ord_2",
+              "location",
+              "id",
+              "first_name",
+              "email",
+              "longitude",
+              "optic_mult"
+            ],
+            [
+              "PS",
+              "country",
+              "pharma_mult",
+              "city",
+              "latitude",
+              "last_name",
+              "ip_address",
+              "siret",
+              "_ord",
+              "iban",
+              "dent_mult",
+              "_ord_2",
+              "location",
+              "id",
+              "first_name",
+              "email",
+              "longitude",
+              "optic_mult"
+            ],
+            [
+              "Prescripteur",
+              "country",
+              "pharma_mult",
+              "city",
+              "latitude",
+              "last_name",
+              "ip_address",
+              "siret",
+              "_ord",
+              "iban",
+              "dent_mult",
+              "_ord_2",
+              "location",
+              "id",
+              "first_name",
+              "email",
+              "longitude",
+              "optic_mult"
+            ],
+            [
+              "Ophtalmologiste",
+              "country",
+              "pharma_mult",
+              "city",
+              "latitude",
+              "last_name",
+              "ip_address",
+              "siret",
+              "_ord",
+              "iban",
+              "dent_mult",
+              "_ord_2",
+              "location",
+              "id",
+              "first_name",
+              "email",
+              "longitude",
+              "optic_mult"
+            ],
+            [
+              "HealthcarePro",
+              "country",
+              "pharma_mult",
+              "city",
+              "latitude",
+              "last_name",
+              "ip_address",
+              "siret",
+              "_ord",
+              "iban",
+              "dent_mult",
+              "_ord_2",
+              "location",
+              "id",
+              "first_name",
+              "email",
+              "longitude",
+              "optic_mult"
+            ],
+            [
+              "Prescriber",
+              "country",
+              "pharma_mult",
+              "city",
+              "latitude",
+              "last_name",
+              "ip_address",
+              "siret",
+              "_ord",
+              "iban",
+              "dent_mult",
+              "_ord_2",
+              "location",
+              "id",
+              "first_name",
+              "email",
+              "longitude",
+              "optic_mult"
+            ],
+            [
+              "Executeur",
+              "country",
+              "pharma_mult",
+              "city",
+              "latitude",
+              "last_name",
+              "ip_address",
+              "siret",
+              "_ord",
+              "iban",
+              "dent_mult",
+              "_ord_2",
+              "location",
+              "id",
+              "first_name",
+              "email",
+              "longitude",
+              "optic_mult"
+            ],
+            [
+              "Opticien",
+              "country",
+              "pharma_mult",
+              "city",
+              "latitude",
+              "last_name",
+              "ip_address",
+              "siret",
+              "_ord",
+              "iban",
+              "dent_mult",
+              "_ord_2",
+              "location",
+              "id",
+              "first_name",
+              "email",
+              "longitude",
+              "optic_mult"
+            ],
+            [
+              "Executor",
+              "country",
+              "pharma_mult",
+              "city",
+              "latitude",
+              "last_name",
+              "ip_address",
+              "siret",
+              "_ord",
+              "iban",
+              "dent_mult",
+              "_ord_2",
+              "location",
+              "id",
+              "first_name",
+              "email",
+              "longitude",
+              "optic_mult"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Fraud Scenario 4: Prescriber and Executor - same person",
+      "reports": [
+        {
+          "id": "2781f932-8d6e-4089-b9e0-5c9d80715f09",
+          "title": "Healthcare professional is both prescriber and executor with volume",
+          "query": "MATCH path = (ps:PS&Prescripteur&Executeur)-[:REALISE]->(presta1:Prestation&Prescription)-[:ORDONNE]->(presta2:Prestation&Execution)<-[:REALISE]-(ps)\nWITH ps, collect(path) AS paths, collect(presta2) AS executions\nWITH ps.id AS ps_id, ps, round(apoc.coll.sum([ex IN executions | apoc.coll.sum([0.0]+[(ex)-[:CONTIENT]->(soin:Soin) | soin.prix_facture])]),2) AS volume\nORDER BY volume DESC\nRETURN ps_id, ps, ps.last_name AS last_name, volume\n\n\n",
+          "width": 24,
+          "height": 8,
+          "x": 0,
+          "y": 0,
+          "type": "table",
+          "selection": {},
+          "settings": {
+            "actionsRules": [
+              {
+                "condition": "Click",
+                "field": "ps_id",
+                "value": "ps_id",
+                "customization": "set variable",
+                "customizationValue": "ps_id"
+              },
+              {
+                "condition": "Click",
+                "field": "ps_id",
+                "value": "last_name",
+                "customization": "set variable",
+                "customizationValue": "recherche"
+              },
+              {
+                "condition": "Click",
+                "field": "ps_id",
+                "value": "1/healthcare pro 360",
+                "customization": "set page",
+                "customizationValue": ""
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "title": "Investigations Case Management",
+      "reports": [
+        {
+          "id": "2e88080c-286f-41e8-a919-16cd27d9b4f5",
+          "title": "Professionals to be investigated  ",
+          "query": "MATCH (tbi:Investigation {status:\"1_ToBeInvestigated\"})-[:ABOUT]->(x),\npath = (tbi)-[:NEXT_STATUS]->*(last) WHERE NOT EXISTS {(last)-[:NEXT_STATUS]->()}\nOPTIONAL MATCH (tbi)-[:INVOLVES]->(y)\nWITH tbi, x, collect(y.id) AS involved_professionals, last\nRETURN tbi.author AS author, tbi.date AS date, tbi.comment AS comment, last.status AS status, x.id AS professional,  involved_professionals\n\n",
+          "width": 23,
+          "height": 4,
+          "x": 0,
+          "y": 0,
+          "type": "table",
+          "selection": {},
+          "settings": {
+            "actionsRules": [
+              {
+                "condition": "Click",
+                "field": "professional",
+                "value": "professional",
+                "customization": "set variable",
+                "customizationValue": "ps_id"
+              },
+              {
+                "condition": "Click",
+                "field": "professional",
+                "value": "1/healthcare pro 360",
+                "customization": "set page",
+                "customizationValue": ""
+              },
+              {
+                "condition": "Click",
+                "field": "involved_professional",
+                "value": "involved_professional",
+                "customization": "set variable",
+                "customizationValue": "ps2_id"
+              }
+            ]
+          }
+        },
+        {
+          "id": "58d6df10-9848-4056-b126-81f4410bcc46",
+          "title": "",
+          "query": "MATCH (tbi:Investigation {status:\"1_ToBeInvestigated\"}),\npath_status = (tbi)(()-[:NEXT_STATUS]->(zi))*(last) WHERE NOT EXISTS {(last)-[:NEXT_STATUS]->()}\nOPTIONAL MATCH path=(tbi)--{0,1}()\nRETURN path, path_status, [z IN zi | [(z)-[r:HAS_AUTHOR]->(za)|[r, za]]] AS authors\n\n\n",
+          "width": 23,
+          "height": 7,
+          "x": 0,
+          "y": 4,
+          "type": "graph",
+          "selection": {
+            "Investigation": "(label)",
+            "HAS_AUTHOR": "(label)",
+            "Person": "id",
+            "Employee": "last_name",
+            "Analyst": "id",
+            "PS": "id",
+            "Executeur": "id",
+            "Opticien": "id",
+            "HealthcarePro": "id",
+            "Executor": "id",
+            "Beneficiaire": "id",
+            "Beneficiary": "id"
+          },
+          "settings": {
+            "actionsRules": [
+              {
+                "condition": "onNodeClick",
+                "field": "",
+                "value": "",
+                "customization": "set variable",
+                "customizationValue": ""
+              }
+            ]
+          },
+          "schema": [
+            [
+              "Investigation",
+              "date",
+              "author",
+              "comment",
+              "status"
+            ],
+            [
+              "HAS_AUTHOR"
+            ],
+            [
+              "Person",
+              "last_name",
+              "id",
+              "position",
+              "first_name",
+              "country",
+              "pharma_mult",
+              "city",
+              "latitude",
+              "ip_address",
+              "siret",
+              "_ord",
+              "iban",
+              "dent_mult",
+              "_ord_2",
+              "location",
+              "email",
+              "longitude",
+              "optic_mult"
+            ],
+            [
+              "Employee",
+              "last_name",
+              "id",
+              "position",
+              "first_name"
+            ],
+            [
+              "Analyst",
+              "last_name",
+              "id",
+              "position",
+              "first_name"
+            ],
+            [
+              "PS",
+              "country",
+              "pharma_mult",
+              "city",
+              "latitude",
+              "last_name",
+              "ip_address",
+              "siret",
+              "_ord",
+              "iban",
+              "dent_mult",
+              "_ord_2",
+              "location",
+              "id",
+              "first_name",
+              "email",
+              "longitude",
+              "optic_mult"
+            ],
+            [
+              "Executeur",
+              "country",
+              "pharma_mult",
+              "city",
+              "latitude",
+              "last_name",
+              "ip_address",
+              "siret",
+              "_ord",
+              "iban",
+              "dent_mult",
+              "_ord_2",
+              "location",
+              "id",
+              "first_name",
+              "email",
+              "longitude",
+              "optic_mult"
+            ],
+            [
+              "Opticien",
+              "country",
+              "pharma_mult",
+              "city",
+              "latitude",
+              "last_name",
+              "ip_address",
+              "siret",
+              "_ord",
+              "iban",
+              "dent_mult",
+              "_ord_2",
+              "location",
+              "id",
+              "first_name",
+              "email",
+              "longitude",
+              "optic_mult"
+            ],
+            [
+              "HealthcarePro",
+              "country",
+              "pharma_mult",
+              "city",
+              "latitude",
+              "last_name",
+              "ip_address",
+              "siret",
+              "_ord",
+              "iban",
+              "dent_mult",
+              "_ord_2",
+              "location",
+              "id",
+              "first_name",
+              "email",
+              "longitude",
+              "optic_mult"
+            ],
+            [
+              "Executor",
+              "country",
+              "pharma_mult",
+              "city",
+              "latitude",
+              "last_name",
+              "ip_address",
+              "siret",
+              "_ord",
+              "iban",
+              "dent_mult",
+              "_ord_2",
+              "location",
+              "id",
+              "first_name",
+              "email",
+              "longitude",
+              "optic_mult"
+            ],
+            [
+              "Beneficiaire",
+              "country",
+              "pharma_mult",
+              "city",
+              "latitude",
+              "last_name",
+              "ip_address",
+              "_ord",
+              "iban",
+              "dent_mult",
+              "_ord_2",
+              "location",
+              "id",
+              "first_name",
+              "email",
+              "longitude",
+              "optic_mult"
+            ],
+            [
+              "Beneficiary",
+              "country",
+              "pharma_mult",
+              "city",
+              "latitude",
+              "last_name",
+              "ip_address",
+              "_ord",
+              "iban",
+              "dent_mult",
+              "_ord_2",
+              "location",
+              "id",
+              "first_name",
+              "email",
+              "longitude",
+              "optic_mult"
+            ]
+          ]
+        }
+      ]
+    }
+  ],
+  "parameters": {},
+  "extensions": {
+    "active": true,
+    "activeReducers": [
+      "DASHBOARD/EXTENSIONS/QUERY_TRANSLATOR/"
+    ],
+    "advanced-charts": {
+      "active": true
+    },
+    "styling": {},
+    "actions": {
+      "active": true
+    },
+    "forms": {
+      "active": true
+    },
+    "query-translator": {
+      "active": true,
+      "modelProvider": "OpenAI",
+      "settings": {}
+    },
+    "access-control-management": {
+      "active": true
+    }
+  },
+  "uuid": "30b0c9dc-4fed-4545-90a8-eb7c73c15267"
+}
