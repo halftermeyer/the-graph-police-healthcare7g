@@ -17,10 +17,10 @@ This is a synthetic Dataset, created as a Demo to address insurance companies (F
 #### In the same DB we can find that our dataset can Demo several use cases:
 
 1. Healthcare Professional Fraud Detection & Fraud Investigation
-
-![HealthcareGraphModel](https://github.com/halftermeyer/neo4j-7g-healthcare-pro-fraud-detection/blob/main/media/HealthcareGraphModel.png?raw=true)
+<img width="1362" alt="Screenshot 2024-12-17 at 17 45 14" src="https://github.com/user-attachments/assets/0873bb3f-34ae-4cb8-a07c-a4802950d362" />
 
 2. Case Management
+
 
 ![case_mngt_model](https://github.com/halftermeyer/neo4j-7g-healthcare-pro-fraud-detection/blob/main/media/case_mngt_model.png?raw=true)
 
