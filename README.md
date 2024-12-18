@@ -15,7 +15,7 @@ This is a synthetic Dataset, created as a Demo to address insurance companies (F
 
 ## Database
 
-#### In the same DB we can find that our dataset can Demo several use cases:
+#### In our Dataset you can Demo several use cases, here are the **Graph Models**:
 
 1. Healthcare Professional Fraud Detection & Fraud Investigation
 <img width="1362" alt="Screenshot 2024-12-17 at 17 45 14" src="https://github.com/user-attachments/assets/0873bb3f-34ae-4cb8-a07c-a4802950d362" />
@@ -23,13 +23,10 @@ This is a synthetic Dataset, created as a Demo to address insurance companies (F
 2. Case Management
 <img width="928" alt="Screenshot 2024-12-18 at 14 44 09" src="https://github.com/user-attachments/assets/7cec5b97-3418-4016-b8bc-5391916bf4df" />
 
-3. KYW - Know Your Whoever
-
+3. KYW - Know Your **_Whoever_**
 <img width="842" alt="Screenshot 2024-12-18 at 14 54 11" src="https://github.com/user-attachments/assets/497acbf8-e27b-4a0b-ae48-8c16ca83fe55" />
 
-![kyw_model](https://github.com/halftermeyer/neo4j-7g-healthcare-pro-fraud-detection/blob/main/media/kyw_model.png?raw=true)
-5. HR
-
+4. HR
 ![hr_model](https://github.com/halftermeyer/neo4j-7g-healthcare-pro-fraud-detection/blob/main/media/hr_model.png?raw=true)
 
 #### The Dataset could be used and expanded for other use cases like:
