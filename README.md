@@ -24,9 +24,11 @@ This is a synthetic Dataset, created as a Demo to address insurance companies (F
 <img width="928" alt="Screenshot 2024-12-18 at 14 44 09" src="https://github.com/user-attachments/assets/7cec5b97-3418-4016-b8bc-5391916bf4df" />
 
 3. KYW - Know Your Whoever
-![kyw_model](https://github.com/halftermeyer/neo4j-7g-healthcare-pro-fraud-detection/blob/main/media/kyw_model.png?raw=true)
 
-4. HR
+<img width="842" alt="Screenshot 2024-12-18 at 14 54 11" src="https://github.com/user-attachments/assets/497acbf8-e27b-4a0b-ae48-8c16ca83fe55" />
+
+![kyw_model](https://github.com/halftermeyer/neo4j-7g-healthcare-pro-fraud-detection/blob/main/media/kyw_model.png?raw=true)
+5. HR
 
 ![hr_model](https://github.com/halftermeyer/neo4j-7g-healthcare-pro-fraud-detection/blob/main/media/hr_model.png?raw=true)
 
