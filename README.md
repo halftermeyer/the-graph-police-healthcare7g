@@ -37,19 +37,18 @@ This is a synthetic Dataset, created as a Demo to address insurance companies (F
 - Others
 
 
-## Demo presentation
-#### The current Demo can be reset from neodash first tab
+## Demo & Presentation
+### The Demo is splitted into several parts
 
+#### Neo4j NeoDash
+First, reset the Current Demo from the first tab over NeoDash
 [![Unlikely association](https://img.youtube.com/vi/ifqc-LkD4-4/0.jpg)](https://www.youtube.com/watch?v=ifqc-LkD4-4)
-
-
-#### The demo is splitted into several parts:
-- NeoDash based app for:
-  - Know Your Healthcare Professional (_Pro 360_)
+Now we can use **NeoDash** app for our use cases.
+1. **Know Your Healthcare Professional (_Pro 360_)**
 
     [![video of pro 360](https://img.youtube.com/vi/dMyeZlyMNMo/0.jpg)](https://www.youtube.com/watch?v=dMyeZlyMNMo)
 
-  - Fraud Detection scenarios: They are part of the _Pro 360_ view (Investigation) and some are also processed at the whole DB scale in dedicated tabs (Detection).
+2. **Fraud Detection:** They are part of the _Pro 360_ view (Investigation) and some are also processed at the whole DB scale in dedicated tabs (Detection).
     - Unlikely association of cares during same visit
 
     [![Unlikely association](https://img.youtube.com/vi/uub31K26SSU/0.jpg)](https://www.youtube.com/watch?v=uub31K26SSU)
@@ -70,11 +69,12 @@ This is a synthetic Dataset, created as a Demo to address insurance companies (F
 
     [![Prescriber and Executor are the same person](https://img.youtube.com/vi/dc2a4a0WPh8/0.jpg)](https://www.youtube.com/watch?v=dc2a4a0WPh8)
 
-  - Case Management: a case can be created in the Pro 360 tab and cases are visible in the Case Management tab
+3. **Case Management:**
+    a case can be created in the Pro 360 tab and cases are visible in the Case Management tab
 
     [![Case Management](https://img.youtube.com/vi/w0mxS5Laf1g/0.jpg)](https://www.youtube.com/watch?v=w0mxS5Laf1g)
     
-- Bloom Based Investigation:
+#### Neo4j Bloom
 
 [![Bloom investigation](https://img.youtube.com/vi/dhg7m-rmy60/0.jpg)](https://www.youtube.com/watch?v=dhg7m-rmy60)
 
@@ -83,6 +83,7 @@ This is a synthetic Dataset, created as a Demo to address insurance companies (F
   - *show common PIIs* scene action [there's a twist here]
   - *label fraudulent* scene action
 
+(---)
 ### All materials are available for free usages here:
 - Download the [dump](./TheGraphPolice_dump_auradb_5.6.tar) file for the entire dataset. This was tested for Neo4j AuraDB 5.26, and uses top-tier features like RBAC and requires ~400 MB of storage.
 - Use a [NeoDash Dashboard](./TheGraphPolice_dashboard_fraud_detection.json) which is also persisted in the DB.
