@@ -42,7 +42,9 @@ The Demo is splitted into several parts:
 
 ### Neo4j NeoDash
 First, reset the Current Demo from the first tab over NeoDash
+
 [![Unlikely association](https://img.youtube.com/vi/ifqc-LkD4-4/0.jpg)](https://www.youtube.com/watch?v=ifqc-LkD4-4)
+
 Now we can use **NeoDash** app for our use cases.
 1. **Know Your Healthcare Professional (_Pro 360_)**
 
