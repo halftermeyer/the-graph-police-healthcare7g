@@ -18,7 +18,7 @@ This is a synthetic Dataset, created as a Demo to address insurance companies (F
 
 1. Healthcare Professional Fraud Detection & Fraud Investigation
 
-![healthcare_model](https://github.com/halftermeyer/neo4j-7g-healthcare-pro-fraud-detection/blob/main/media/HealthcareGraphModel.png?raw=true)
+![HealthcareGraphModel](https://github.com/halftermeyer/neo4j-7g-healthcare-pro-fraud-detection/blob/main/media/HealthcareGraphModel.png?raw=true)
 
 2. Case Management
 
