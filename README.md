@@ -8,6 +8,8 @@ Fraud Detection & Investigation Demo
 - A [Bloom Perspective](./TheGraphPolice_bloom_perspective_fraud_investigation.json)
 - An [example cypher script](./example_create_user_rbac.cypher) to create a new database user with priviledges to manage cases.
 
+All videos can be watched as a [Youtube Playlist](https://www.youtube.com/watch?v=dMyeZlyMNMo&list=PL5_423e39Gyek3muNh2nEvPMssioVapkW).
+
 ## Dataset presentation
 
 This is a synthetic dataset created as a demo to address french insurance companies.
