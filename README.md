@@ -23,11 +23,7 @@ This is a synthetic Dataset, created as a Demo to address insurance companies (F
 2. Case Management
 <img width="928" alt="Screenshot 2024-12-18 at 14 44 09" src="https://github.com/user-attachments/assets/7cec5b97-3418-4016-b8bc-5391916bf4df" />
 
-![case_mngt_model](https://github.com/halftermeyer/neo4j-7g-healthcare-pro-fraud-detection/blob/main/media/case_mngt_model.png?raw=true)
-
-
 3. KYW - Know Your Whoever
-
 ![kyw_model](https://github.com/halftermeyer/neo4j-7g-healthcare-pro-fraud-detection/blob/main/media/kyw_model.png?raw=true)
 
 4. HR
