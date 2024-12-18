@@ -27,7 +27,7 @@ This is a synthetic Dataset, created as a Demo to address insurance companies (F
 <img width="842" alt="Screenshot 2024-12-18 at 14 54 11" src="https://github.com/user-attachments/assets/497acbf8-e27b-4a0b-ae48-8c16ca83fe55" />
 
 4. HR
-![hr_model](https://github.com/halftermeyer/neo4j-7g-healthcare-pro-fraud-detection/blob/main/media/hr_model.png?raw=true)
+<img width="828" alt="Screenshot 2024-12-18 at 15 04 01" src="https://github.com/user-attachments/assets/e9b9a06e-0935-4bbe-aaab-9f0ace7b7f43" />
 
 #### The Dataset could be used and expanded for other use cases like:
 
