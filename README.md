@@ -20,7 +20,7 @@ If there's a need to dive deep in how the graph is built, a similar -- but someh
 
 ## Database presentation
 
-#### In the same database lives the data for several use cases:
+#### In the same database live the data for several use cases:
 
 - Healthcare professional fraud detection
 - Healthcare professional fraud investigation
