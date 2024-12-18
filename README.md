@@ -2,6 +2,7 @@
 
 # Neo4j Solution Engineering Hackathon
 # The Graph Police🕵️‍♂️🔍
+![HIVE Image](https://github.com/user-attachments/assets/d4d2b9d5-e72b-4761-95d0-ebc8896214b5)
 
 
 ### Demo & Dataset Background
@@ -20,7 +21,7 @@ This is a synthetic Dataset, created as a Demo to address insurance companies (F
 <img width="1362" alt="Screenshot 2024-12-17 at 17 45 14" src="https://github.com/user-attachments/assets/0873bb3f-34ae-4cb8-a07c-a4802950d362" />
 
 2. Case Management
-
+<img width="928" alt="Screenshot 2024-12-18 at 14 44 09" src="https://github.com/user-attachments/assets/7cec5b97-3418-4016-b8bc-5391916bf4df" />
 
 ![case_mngt_model](https://github.com/halftermeyer/neo4j-7g-healthcare-pro-fraud-detection/blob/main/media/case_mngt_model.png?raw=true)
 
