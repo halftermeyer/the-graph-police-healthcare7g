@@ -4,8 +4,8 @@
 # The Graph Police🕵️‍♂️🔍
 ![HIVE Image](https://github.com/user-attachments/assets/d4d2b9d5-e72b-4761-95d0-ebc8896214b5)
 
-
 ### Demo & Dataset Background
+# Demo & Dataset Background
 
 This is a synthetic Dataset, created as a Demo to address insurance companies (French).
 <br/>It contains data about Healthcare Professionals and the way they interact between each other, and with their patients (_Beneficiary_ in the Insurance Company perspective).
