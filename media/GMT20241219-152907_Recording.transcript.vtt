@@ -1,0 +1,230 @@
+WEBVTT
+
+1
+00:00:00.480 --> 00:00:01.500
+Gal Bello: Do.
+
+2
+00:00:03.470 --> 00:00:14.129
+Gal Bello: Hello, everybody! Hello, everybody! My name is gal I have here with Vp, we're both working in the solution engineering team from Emea, north
+
+3
+00:00:14.250 --> 00:00:32.433
+Gal Bello: part of the hackathon for field engineering. We have chosen to work on healthcare, fraud, detection, and investigation. Why? Because this is super interesting area and a lot of stuff that can be helpful from the 7 graph. So let me just cut directly to what we're heading to.
+
+4
+00:00:32.890 --> 00:00:42.340
+Gal Bello: So just to make sure everybody on the same line for 7 graph. So each healthcare organization, actually, every company or organization have 7 graph.
+
+5
+00:00:42.340 --> 00:01:07.080
+Gal Bello: One is the employees connection. We have employees, every every company, the management, the groups, the teams, whatever they're all connected. Of course they have the security network connected, the suppliers supplier connected to the product, the customer. You can see those wonderful connections, this wonderful map of of graph. And we see those 7 graph. And then when we look forward to talking about specifically medical and healthcare organization
+
+6
+00:01:07.080 --> 00:01:34.619
+Gal Bello: or pharma in general. This is where we're going to head and talk about today in the next 10 min. So, of course, from the 100 Fortune 100, there is 75 customers who are trusted by Nio, and we have the 5 big top pharmaceuticals who are already using Neo 4 J, and these are all healthcare organizations which are super valuable for us because they already understand the value of the 7 graph.
+
+7
+00:01:34.956 --> 00:01:48.070
+Gal Bello: We have top retails, of course, automakers and a lot of use cases and a lot of things that and companies worldwide that use already. Neo 4 j. And the 7 graph to to expand their their use cases.
+
+8
+00:01:48.479 --> 00:02:14.360
+Gal Bello: We have a much more than 700 customers worldwide. You can. You can see those Logos which are really really nice to see. They are all already Neo 4 J. Customers. And when we deep dive into Pharma we know that Astrazeneca, Pfizer, and others are already using Neo 4 J. Part of their production system, which is a a back back support for our ideas of pharmaceutical solutions.
+
+9
+00:02:14.940 --> 00:02:43.700
+Gal Bello: So why should they choose? Graph? Why specifically, neo for J and Y graph. So the reason is that actually graph is the only ability to find those relationship and connections between each of the data sets. And when you have those 7 different graphs, you can find correlations between different sizes on the graph. It's not totally isolated, like the use case of an Hr. Or employee, or doctors, or professional. It's all connected to each other, and we'll see that in a minute.
+
+10
+00:02:43.700 --> 00:03:01.379
+Gal Bello: And when you think about the incentive for those healthcare companies, when you think about the fraud actions that happen in the medical world, you see that the healthcare industry suffers from over 400 billion fraud cases on an annually basis. And this is exactly where Neo. 4 j. Can give them a hand.
+
+11
+00:03:01.500 --> 00:03:26.470
+Gal Bello: So with Neo. 4 J, they can run fraud, detection, and investigation to protect their data and to actually uncover hidden cases and patterns that they cannot find with other Dbs which are super super valuable for them, and this is the why they should use healthcare with Neo 4 JI mean, think about how will they do that? So let's go deep. Dive into those 7 graph again. But I'm not going to look at those 7 graphs completely
+
+12
+00:03:26.470 --> 00:03:51.099
+Gal Bello: and look only on 3 of them, so we call it an employee, the transactions and the customer. But I want to change the terminology. Talk only about pharmaceutical and our cases in healthcare. So the employee, it's actually in our case, it can be patient. It can be doctors. It could be medical team skills and management career management. We can all of those knowledge graph together for our specific persona in the graph.
+
+13
+00:03:51.270 --> 00:04:20.799
+Gal Bello: So this is the first, st the 1st part, the second graph from the 7 will be transactions, payments to doctors, to healthcare institutions, to hospitals. A circular payment that I pay to Pierre Peer pays to me to a doctor, or whatever the credit cards, it's all sitting in a different graph, but actually connected to the employee graph. And of course this is exactly where detection and investigation of credit can come handy. And this is what we would like as a healthcare organization to check. And we take these 2 together. And you think, of course, on the customer.
+
+14
+00:04:20.800 --> 00:04:45.549
+Gal Bello: So the customer also can be modeled as the patient, or maybe the doctor, maybe the nurse, maybe the dentist, or maybe the secretary. They're all together, and of course the customer is the one with Spain. So we want to give them intelligent recommendations for surgery, for medicine, for medical treatments, maybe for other stuff, maybe a geographic location of a medical, a place that they can go and get served for so healthcare institutes churn prevent.
+
+15
+00:04:45.550 --> 00:04:55.700
+Gal Bello: We have a lot of stuff to do a lot of use cases on a graph. And when you think about connection of those 3 different graph together, this is exactly the power of graph.
+
+16
+00:04:56.120 --> 00:05:25.890
+Gal Bello: So when we jump into our specific demo that you can use to use for your own healthcare customers, we refer 1st thought about healthcare for detection. After you detect that you want to do those in investigation and present to the analytical team. How can they do that with neo Dash, how can they do that with cipher, with blue? So, of course, for for investigation as well, and professional knowledge graph, this is a doctor, this is a nurse. This is a client. This is a car phone. We will see all of those together in the models. So
+
+17
+00:05:26.587 --> 00:05:46.029
+Gal Bello: I already talked about our employee data, the transactions, data, and the customer that that they all wrap up to get up to our model. We have several different models. The easiest one is, for example, we have a healthcare professional. It could be a doctor, a nurse, or or any any of such.
+
+18
+00:05:46.030 --> 00:06:04.390
+Gal Bello: He is connected to a prescription, it might be running or responsible for an execution of surgery. We have the specific care that contains a position, a beneficiary of the patient. It's all connected as a very simple and interesting graph, and this is what we will use for fraud, detection, and investigation
+
+19
+00:06:04.390 --> 00:06:21.780
+Gal Bello: afterwards. For each investigation he will have statuses, he will have parts. He will have analytics who is working on that, and is wrote this investigation, who is involving and what's about, and another, what's the patient was involved? So we can see another kind of nice model to use in the demo.
+
+20
+00:06:21.780 --> 00:06:45.889
+Gal Bello: Now, the 3rd one, of course, is kind of a knowledge graph. You can know who knows whatever. So we have an healthcare professional on the left side who know who has a phone when the phone is connected to a beneficiary. So we it's all ending up to a huge graph that all connects. And of course the Hr one. So our doctors are also employees there. They have employees, I mean their own teams. They have their addresses. Phone. We all model this together as a huge
+
+21
+00:06:45.910 --> 00:06:59.210
+Gal Bello: graph containing of 3 of the 7 which is really valuable. So, with no further ado, this is the time to do the actual hands on Demo. I will pass it now for the sharing for Pierre and Pierre will show you everything. So Pierre.
+
+22
+00:07:00.970 --> 00:07:16.349
+Pierre H: Okay, thank you. Gal, it's now time to see how those graphs work together and how we can. We can, we can see, they interact. So I'm sharing. Yeah, can you see my screen? Yeah.
+
+23
+00:07:16.350 --> 00:07:21.210
+Gal Bello: No, not yet. I don't see it so if you can share it again, please.
+
+24
+00:07:21.210 --> 00:07:23.260
+Pierre H: Oh, okay.
+
+25
+00:07:27.470 --> 00:07:28.769
+Gal Bello: Yeah, we can see your screen.
+
+26
+00:07:29.180 --> 00:07:52.779
+Pierre H: That's great. So here we can see the customer or anything. 360 of a graph. You can see everything about a given element of your database here. This element is a healthcare professional. You can see everything. He does, everything we know about him or about her. Here. It's a woman. It's a doctor, it's an optician.
+
+27
+00:07:52.780 --> 00:08:07.759
+Pierre H: And we can see where the patients are located. And we can also see what long distance patients she's interactive with.
+
+28
+00:08:07.760 --> 00:08:21.430
+Pierre H: This is already a pattern of fraud detection. Sometimes we want to know why a patient interacts with a doctor that lives far from him.
+
+29
+00:08:21.430 --> 00:08:32.469
+Pierre H: Then here we can see we have detected some kinds of swampy situation, some kinds of flood.
+
+30
+00:08:32.500 --> 00:08:46.529
+Pierre H: So let's use our case management tool to report and to start an investigation on this topic. So there are a lot of interaction with long distance patients. So let's report it.
+
+31
+00:08:47.460 --> 00:08:52.600
+Pierre H: Okay, that's filed whip.
+
+32
+00:08:53.010 --> 00:08:59.340
+Pierre H: Let's go to our investigation case management part. Yes, no. We can see. We have
+
+33
+00:08:59.770 --> 00:09:09.890
+Pierre H: the all the information about this case in the context, and we can already get information about it.
+
+34
+00:09:10.400 --> 00:09:12.460
+Pierre H: So this is all, doctor.
+
+35
+00:09:14.160 --> 00:09:15.250
+Pierre H: No.
+
+36
+00:09:15.480 --> 00:09:40.080
+Pierre H: we can see other fraud patterns. For instance, here a doctor can prescribe or 2 medicine that are not compatible together. We can spot that, and we have other fraud scenarios here. It's the same as before, but as the world database scale, we want to see every
+
+37
+00:09:40.080 --> 00:09:45.940
+Pierre H: possible fraud in our database, not only starting from a
+
+38
+00:09:45.940 --> 00:09:53.230
+Pierre H: given professional points. So here we see that
+
+39
+00:09:53.390 --> 00:10:18.849
+Pierre H: Dr. Herrero is working with a patient named Bedel, that lives on the other side of the city. So that's not okay. And this looks edgy. The doctor is doing a lot of strange things. So let's file it to to our case management tool.
+
+40
+00:10:20.750 --> 00:10:23.630
+Pierre H: Okay, that's filed one more.
+
+41
+00:10:23.820 --> 00:10:49.030
+Pierre H: Another scenario would be repeated actions. It's sometimes not normal. If the frequency of an act is not probable we want to spot any doctor that would repeat it too much compared to the frequency. Here, for instance, the Dr. Ramlow
+
+42
+00:10:49.060 --> 00:11:03.730
+Pierre H: is prescribing a lot of antibiotics, and it may be a fraud pattern. It's not necessarily a fraud, but it's worth investigating it.
+
+43
+00:11:04.290 --> 00:11:25.019
+Pierre H: Another thought pattern here is where the prescriber and the executor of a care are in a close relationship. Maybe they are sharing a lot of patients together, one sending patient to the other. Here we have 2 doctors that live really close to each other. So it's normal.
+
+44
+00:11:25.020 --> 00:11:39.489
+Pierre H: But when they are from Brittany to Corsica, it's it's more of a problem. So this is potential fraud. Oh, oh, same doctor as before. That's strange.
+
+45
+00:11:41.410 --> 00:11:50.359
+Pierre H: so we can see it. We can see it now into details. From the professional 360 view.
+
+46
+00:11:50.630 --> 00:11:57.170
+Pierre H: Lindsay and Aruro, for instance, are working a lot together with long distance
+
+47
+00:11:57.270 --> 00:12:02.009
+Pierre H: for scenario, when the prescriber and the executor are the same person.
+
+48
+00:12:02.120 --> 00:12:11.129
+Pierre H: it may happen, but if it happens too much, it may be strange. Here we have a dentist. In the case of a dentist. It's normal.
+
+49
+00:12:11.220 --> 00:12:40.720
+Pierre H: Let's go now on the investigation part. When we have spotted a potential situation, we may want to look more closely to them. So here we have an investigation that was filed as not fraud, by Wendy, an analyst from our team. But I did spot more fraud from the same doctor, so we may investigate a little more.
+
+50
+00:12:40.720 --> 00:12:55.980
+Pierre H: So let's isolate the part of the graph that is important for us. And maybe we want to know how people there are related together, and we can see, using the strength of the graph
+
+51
+00:12:55.980 --> 00:13:01.619
+Pierre H: that 2 patients and 2 other patients are sharing e-bands.
+
+52
+00:13:02.080 --> 00:13:29.351
+Pierre H: and that the doctor is sharing location with our analyst. Oh, it has been connected to our, to our Hr database. So let's label that as fraudulent, it's definitely a swampy situation, and we can edit this from our bloom application that is perfect from that. If you want to file. So it's actually a fraudulent pattern.
+
+53
+00:13:30.110 --> 00:13:52.809
+Pierre H: Yes, you may not want to do to to enable every analyst to see your Hr data and its world-based access control problem that you can solve easily with new project. So here you saw our graphs work together in a great way.
+
+54
+00:13:54.300 --> 00:14:14.980
+Gal Bello: Thank you, Pierre. This is super cool. Niadesh is amazing. Let me just say thank you for everybody, especially for Pierre. I'm gonna just reach out to one of the 2 of one of the 2 of us. If you need any more information on healthcare the demo, and we wish you, Shalom, and au revoir, and thank you, everybody. Bye-bye.
+
+55
+00:14:15.380 --> 00:14:18.790
+Pierre H: You'll see not the Rainbow Burger meal.
+
+56
+00:14:19.380 --> 00:14:21.202
+Pierre H: Sorry for that.
+
+57
+00:14:21.810 --> 00:14:25.400
+Gal Bello: Please stop recording. I'll do it. Here, there you go!
+
