@@ -88,7 +88,7 @@ Now we can use **NeoDash** app for our use cases.
 ## 
 ### -------- Materials --------
 ## We encourage users to use these materials, which are also available for download here:
-- Download the [dump](./TheGraphPolice_dump_auradb_5.6.tar) file for the entire dataset. This was tested for Neo4j AuraDB 5.26, and uses top-tier features like RBAC and requires ~400 MB of storage.
+- Download the [dump](https://drive.google.com/file/d/1s69GvNtOua69zIYDo2FdXSWAD9DcdkrO/view?usp=sharing) file for the entire dataset. This was tested for Neo4j AuraDB 5.26, and uses top-tier features like RBAC and requires ~400 MB of storage.
 - Use a [NeoDash Dashboard](./TheGraphPolice_dashboard_fraud_detection.json) which is also persisted in the DB.
 - Use a [Bloom Perspective](./TheGraphPolice_bloom_perspective_fraud_investigation.json)
 - This is a [Cypher Script](./example_create_user_rbac.cypher) which will create a new user on the DB, with enough privileges for *read* and *Case Management*.
